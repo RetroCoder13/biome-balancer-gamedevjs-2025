@@ -43,6 +43,5 @@ class Player{
         // ctx.fillRect(this.x,this.y,this.w,this.h)
         // ctx.drawImage(this.image,this.x,this.y,this.w,this.h)
         renderManager.render("player","idle",this.x,this.y,this.w,this.h)
-        
     }
 }
