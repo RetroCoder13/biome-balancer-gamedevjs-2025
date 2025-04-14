@@ -25,10 +25,13 @@ renderManager.addImages("assets/textures/player/idle","player","idle",18)
 renderManager.createState("player","walk",true,4)
 renderManager.addImages("assets/textures/player/walk","player","walk",4)
 
+var animal = new Animal(100,100,50,50,1,"player")
+
 function update(){
     ctx.clearRect(cameraManager.x-cameraManager.offsetX-offset[0],cameraManager.y-cameraManager.offsetY-offset[1],canvas.width,canvas.height)
 
     player.update(renderManager,inputManager)
+    animal.update(renderManager)
     cameraManager.update(player)
 
     requestAnimationFrame(update)
