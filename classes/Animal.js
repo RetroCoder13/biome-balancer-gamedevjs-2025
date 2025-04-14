@@ -16,6 +16,8 @@ class Animal{
         if(this.held){
             this.x = player.x
             this.y = player.y - this.h
+            this.targetX = this.x
+            this.targetY = this.y
         } else {
             let movement = [0,0]
 
