@@ -42,7 +42,7 @@ function update(){
     ctx.clearRect(cameraManager.x-cameraManager.offsetX-offset[0],cameraManager.y-cameraManager.offsetY-offset[1],canvas.width,canvas.height)
 
     player.update(renderManager,inputManager)
-    animalManager.update(renderManager)
+    animalManager.update(renderManager,player)
     cameraManager.update(player)
 
     requestAnimationFrame(update)

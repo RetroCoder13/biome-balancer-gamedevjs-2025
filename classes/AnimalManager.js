@@ -7,9 +7,9 @@ class AnimalManager{
         this.animals.push(animal)
     }
 
-    update(renderManager){
+    update(renderManager,player){
         for(let i=0;i<this.animals.length;i++){
-            this.animals[i].update(renderManager)
+            this.animals[i].update(renderManager,player)
         }
     }
 }
