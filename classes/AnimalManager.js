@@ -15,10 +15,10 @@ class AnimalManager{
                     && this.animals[i].y + this.animals[i].h >= player.y
                     && this.animals[i].y <= player.y + player.h
                 ){
-                    if(inputManager.getKey("e")){
+                    if(inputManager.getKey("e") && !player.holdingAnimal){
                         this.animals[i].held = true
                         player.holdingAnimal = true
-                    } else {
+                    } else if(this.animals[i].held) {
                         // this.animals[i].y += 50
                         this.animals[i].targetY = player.y
                         this.animals[i].held = false

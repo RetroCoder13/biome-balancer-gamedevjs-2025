@@ -33,6 +33,7 @@ renderManager.createState("player","idleAnimal",true,18)
 renderManager.addImages("assets/textures/player/idle/animal","player","idleAnimal",18)
 
 animalManager.addAnimal(new Animal(100,100,50,50,1,"rabbit"))
+animalManager.addAnimal(new Animal(200,100,50,50,1,"rabbit"))
 
 renderManager.createObject("rabbit")
 renderManager.createState("rabbit","idle",true,28)
