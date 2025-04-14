@@ -14,10 +14,10 @@ class Animal{
     update(renderManager,player){
         let move = false
         if(this.held){
-            this.x = player.x
-            this.y = player.y - this.h
-            this.targetX = this.x
-            this.targetY = this.y
+            // this.x = player.x
+            // this.y = player.y - this.h
+            this.targetX = player.x
+            this.targetY = player.y - this.h
         } else {
             let movement = [0,0]
 
@@ -33,9 +33,9 @@ class Animal{
                 }
             }
 
-            this.x += lerp(this.x,this.targetX,0.5)
-            this.y += lerp(this.y,this.targetY,0.5)
         }
+        this.x += lerp(this.x,this.targetX,0.5)
+        this.y += lerp(this.y,this.targetY,0.5)
 
         if(move){
             renderManager.render(this.type,"walk",this.x,this.y,this.w,this.h)
