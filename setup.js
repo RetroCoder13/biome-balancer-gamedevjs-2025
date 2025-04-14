@@ -48,3 +48,5 @@ animalManager.addAnimal(new Animal(200,100,50,50,1,"rabbit"))
 renderManager.createObject("rabbit")
 renderManager.createState("rabbit","idle",true,28)
 renderManager.addImages("assets/textures/animals/rabbit/idle","rabbit","idle",28)
+
+var ui = new UI(player,1000,500,"m")

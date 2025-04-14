@@ -6,6 +6,7 @@ function update(){
     player.update(renderManager,inputManager)
     animalManager.update(renderManager,inputManager,player)
     cameraManager.update(player)
+    ui.update(renderManager,inputManager,player)
 
     requestAnimationFrame(update)
 }
