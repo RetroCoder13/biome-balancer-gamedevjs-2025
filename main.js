@@ -19,14 +19,11 @@ var cameraManager = new CameraManager(player.x,player.y)
 var inputManager = new InputManager(cameraManager)
 
 renderManager.createObject("player")
-renderManager.createState("player","idle",false)
-renderManager.addImage("assets/textures/player/idle.png","player","idle")
+renderManager.createState("player","idle",true,18)
+renderManager.addImages("assets/textures/player/idle","player","idle",18)
 
 renderManager.createState("player","walk",true,4)
-renderManager.addImage("assets/textures/player/walk/1.png","player","walk")
-renderManager.addImage("assets/textures/player/walk/2.png","player","walk")
-renderManager.addImage("assets/textures/player/walk/3.png","player","walk")
-renderManager.addImage("assets/textures/player/walk/4.png","player","walk")
+renderManager.addImages("assets/textures/player/walk","player","walk",4)
 
 function update(){
     ctx.clearRect(cameraManager.x-cameraManager.offsetX-offset[0],cameraManager.y-cameraManager.offsetY-offset[1],canvas.width,canvas.height)
