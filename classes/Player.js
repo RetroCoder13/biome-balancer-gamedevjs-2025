@@ -7,6 +7,7 @@ class Player{
         this.targetX = x
         this.targetY = y
         this.speed = speed
+        this.holdingAnimal = false
     }
 
     update(renderManager,inputManager){
@@ -47,7 +48,13 @@ class Player{
         ctx.fillStyle = "#000"
         // ctx.fillRect(this.x,this.y,this.w,this.h)
         // ctx.drawImage(this.image,this.x,this.y,this.w,this.h)
-        if(move){
+        if(this.holdingAnimal){
+            if(move){
+                renderManager.render("player","walkAnimal",this.x,this.y,this.w,this.h)
+            } else {
+                renderManager.render("player","idleAnimal",this.x,this.y,this.w,this.h)
+            }
+        } else if(move){
             renderManager.render("player","walk",this.x,this.y,this.w,this.h)
         } else {
             renderManager.render("player","idle",this.x,this.y,this.w,this.h)

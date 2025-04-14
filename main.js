@@ -29,6 +29,9 @@ renderManager.addImages("assets/textures/player/walk","player","walk",4)
 renderManager.createState("player","walkAnimal",true,4)
 renderManager.addImages("assets/textures/player/walk/animal","player","walkAnimal",4)
 
+renderManager.createState("player","idleAnimal",true,4)
+renderManager.addImages("assets/textures/player/idle/animal","player","idleAnimal",4)
+
 animalManager.addAnimal(new Animal(100,100,50,50,1,"rabbit"))
 
 renderManager.createObject("rabbit")
