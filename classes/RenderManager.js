@@ -30,14 +30,17 @@ class RenderManager{
     }
 
     render(object,state,x,y,w,h){
-        this.totalFrames += 1
-        if(this.totalFrames % 10 == 0){
-            this.frames += 1
-        }
         if(this.images[object][state].animation){
             ctx.drawImage(this.images[object][state].images[this.frames % this.images[object][state].frames],x,y,w,h)
         } else {
             ctx.drawImage(this.images[object][state].images[0],x,y,w,h)
+        }
+    }
+
+    update(){
+        this.totalFrames++
+        if(this.totalFrames % 10 == 0){
+            this.frames += 1
         }
     }
 }
