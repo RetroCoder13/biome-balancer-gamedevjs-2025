@@ -18,5 +18,6 @@ class CameraManager{
         ctx.translate(-this.dx,-this.dy)
         this.targetX = player.x
         this.targetY = player.y
+        canvas.style.backgroundPosition = `${-this.x}px ${-this.y}px`
     }
 }
