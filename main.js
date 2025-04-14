@@ -18,6 +18,16 @@ var audioManager = new AudioManager()
 var cameraManager = new CameraManager(player.x,player.y)
 var inputManager = new InputManager(cameraManager)
 var animalManager = new AnimalManager()
+var biomeManager = new BiomeManager(1000,500,50,player)
+biomeManager.generateBiomes()
+
+renderManager.createObject("biome")
+renderManager.createState("biome","forest",false)
+renderManager.addImage("assets/textures/biome/forest.png","biome","forest")
+renderManager.createState("biome","desert",false)
+renderManager.addImage("assets/textures/biome/desert.png","biome","desert")
+renderManager.createState("biome","tundra",false)
+renderManager.addImage("assets/textures/biome/tundra.png","biome","tundra")
 
 renderManager.createObject("player")
 renderManager.createState("player","idle",true,18)
@@ -42,6 +52,8 @@ renderManager.addImages("assets/textures/animals/rabbit/idle","rabbit","idle",28
 function update(){
     ctx.clearRect(cameraManager.x-cameraManager.offsetX-offset[0],cameraManager.y-cameraManager.offsetY-offset[1],canvas.width,canvas.height)
 
+    renderManager.update()
+    biomeManager.update(renderManager)
     player.update(renderManager,inputManager)
     animalManager.update(renderManager,inputManager,player)
     cameraManager.update(player)
