@@ -18,7 +18,7 @@ var audioManager = new AudioManager()
 var cameraManager = new CameraManager(player.x,player.y)
 var inputManager = new InputManager(cameraManager)
 var animalManager = new AnimalManager()
-var biomeManager = new BiomeManager(1000,500,50,player)
+var biomeManager = new BiomeManager(5000,2500,50,player)
 biomeManager.generateBiomes()
 
 renderManager.createObject("biome")
