@@ -49,4 +49,4 @@ renderManager.createObject("rabbit")
 renderManager.createState("rabbit","idle",true,28)
 renderManager.addImages("assets/textures/animals/rabbit/idle","rabbit","idle",28)
 
-var ui = new UI(player,1000,500,"m")
+var mapUI = new MapUI(player,1000,500,"m")

@@ -3,14 +3,14 @@ class UI{
         this.active = false
         this.w = w
         this.h = h
-        this.x = -w/2+player.x
-        this.y = -h/2+player.y
+        this.x = -this.w/2+player.x+player.w/2
+        this.y = -this.h/2+player.y+player.h/2
         this.triggerKey = triggerKey
     }
 
     updatePosition(player){
-        this.x = -this.w/2+player.x
-        this.y = -this.h/2+player.y
+        this.x = -this.w/2+player.x+player.w/2
+        this.y = -this.h/2+player.y+player.h/2
     }
 
     update(renderManager,inputManager,player){
@@ -32,12 +32,15 @@ class UI{
 
 class MapUI extends UI{
     render(renderManager,inputManager){
-
+        ctx.fillStyle = "rgba(0,0,0,0.5)"
+        ctx.fillRect(this.x,this.y,this.w,this.h)
+        ctx.fillStyle = "#FFFFFF"
+        ctx.fillText("Map",this.x+50,this.y+50,100)
     }
 }
 
 class CompendiumUI extends UI{
     render(renderManager,inputManager){
-        
+
     }
 }

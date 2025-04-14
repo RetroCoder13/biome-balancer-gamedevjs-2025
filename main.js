@@ -1,12 +1,14 @@
 function update(){
     ctx.clearRect(cameraManager.x-cameraManager.offsetX-offset[0],cameraManager.y-cameraManager.offsetY-offset[1],canvas.width,canvas.height)
 
-    renderManager.update()
-    biomeManager.update(renderManager)
-    player.update(renderManager,inputManager)
-    animalManager.update(renderManager,inputManager,player)
-    cameraManager.update(player)
-    ui.update(renderManager,inputManager,player)
+    mapUI.update(renderManager,inputManager,player)
+    if(!mapUI.active){
+        renderManager.update()
+        biomeManager.update(renderManager)
+        player.update(renderManager,inputManager)
+        animalManager.update(renderManager,inputManager,player)
+        cameraManager.update(player)
+    }
 
     requestAnimationFrame(update)
 }
