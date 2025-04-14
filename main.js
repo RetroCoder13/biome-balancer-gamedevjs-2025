@@ -6,8 +6,8 @@ canvas.style.width = "1000px"
 canvas.style.height = "500px"
 canvas.width = 1000*scale
 canvas.height = 500*scale
-// ctx.scale(scale,scale)
-let offset = [975,475]
+ctx.scale(scale,scale)
+let offset = [475,225]
 ctx.translate(offset[0],offset[1])
 
 ctx.imageSmoothingEnabled = false
@@ -20,7 +20,13 @@ var inputManager = new InputManager(cameraManager)
 
 renderManager.createObject("player")
 renderManager.createState("player","idle",false)
-renderManager.addImage("assets/textures/player/player.png","player","idle")
+renderManager.addImage("assets/textures/player/idle.png","player","idle")
+
+renderManager.createState("player","walk",true,4)
+renderManager.addImage("assets/textures/player/walk/1.png","player","walk")
+renderManager.addImage("assets/textures/player/walk/2.png","player","walk")
+renderManager.addImage("assets/textures/player/walk/3.png","player","walk")
+renderManager.addImage("assets/textures/player/walk/4.png","player","walk")
 
 function update(){
     ctx.clearRect(cameraManager.x-cameraManager.offsetX-offset[0],cameraManager.y-cameraManager.offsetY-offset[1],canvas.width,canvas.height)

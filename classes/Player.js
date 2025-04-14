@@ -11,17 +11,22 @@ class Player{
 
     update(renderManager,inputManager){
         let movement = [0,0]
+        let move = false
         if(inputManager.getKey("w")){
             movement[1] -= 1
+            move = true
         }
         if(inputManager.getKey("s")){
             movement[1] += 1
+            move = true
         }
         if(inputManager.getKey("a")){
             movement[0] -= 1
+            move = true
         }
         if(inputManager.getKey("d")){
             movement[0] += 1
+            move = true
         }
 
         let theta = Math.atan(movement[1]/movement[0])
@@ -42,6 +47,10 @@ class Player{
         ctx.fillStyle = "#000"
         // ctx.fillRect(this.x,this.y,this.w,this.h)
         // ctx.drawImage(this.image,this.x,this.y,this.w,this.h)
-        renderManager.render("player","idle",this.x,this.y,this.w,this.h)
+        if(move){
+            renderManager.render("player","walk",this.x,this.y,this.w,this.h)
+        } else {
+            renderManager.render("player","idle",this.x,this.y,this.w,this.h)
+        }
     }
 }
