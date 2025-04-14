@@ -18,7 +18,7 @@ class AnimalManager{
                     if(inputManager.getKey("e") && !player.holdingAnimal){
                         this.animals[i].held = true
                         player.holdingAnimal = true
-                    } else if(this.animals[i].held) {
+                    } else if(inputManager.getKey("r") && this.animals[i].held) {
                         // this.animals[i].y += 50
                         this.animals[i].targetY = player.y
                         this.animals[i].held = false
