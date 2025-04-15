@@ -7,7 +7,7 @@ function update(){
         biomeManager.update(renderManager)
         player.update(renderManager,inputManager,biomeManager)
         animalManager.update(renderManager,inputManager,player)
-        hud.update(cameraManager)
+        hud.update(cameraManager,animalManager)
     }
     cameraManager.update(player)
 

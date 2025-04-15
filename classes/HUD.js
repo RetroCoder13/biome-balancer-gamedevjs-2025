@@ -11,13 +11,14 @@ class HUD{
         this.y = cameraManager.y-cameraManager.offsetY-offset[1]
     }
 
-    update(cameraManager){
+    update(cameraManager,animalManager){
         this.updatePosition(cameraManager)
-        this.render()
+        this.render(animalManager)
     }
 
-    render(){
-        // ctx.fillText()
+    render(animalManager){
+        let happyAnimals = animalManager.getHappyAnimals()
+        ctx.fillText(`${happyAnimals.count}/${happyAnimals.total}`,this.x+50,this.y+50,1000)
         renderManager.render("keys","m",this.x,this.y,50,50)
     }
 }
