@@ -90,6 +90,7 @@ class MapUI extends UI{
             }
         }
         renderManager.render("player","idle",playerPosition[0],playerPosition[1],size*3,size*3)
+        renderManager.render("keys","esc",this.x+10,this.y+10,50,50)
     }
 }
 

@@ -23,6 +23,12 @@ var animalManager = new AnimalManager()
 var biomeManager = new BiomeManager(mapSize[0],mapSize[1],50,player)
 biomeManager.generateBiomes()
 
+renderManager.createObject("keys")
+renderManager.createState("keys","esc",false)
+renderManager.addImage("assets/textures/keys/esc.png","keys","esc")
+renderManager.createState("keys","m",false)
+renderManager.addImage("assets/textures/keys/m.png","keys","m")
+
 renderManager.createObject("biome")
 renderManager.createState("biome","forest",false)
 renderManager.addImage("assets/textures/biome/forest.png","biome","forest")
