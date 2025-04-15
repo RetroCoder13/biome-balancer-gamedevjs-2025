@@ -87,6 +87,9 @@ class MapUI extends UI{
                 ctx.fillRect(this.x+offset[0]+(animalManager.animals[i].x)*size/50+200-size*.5,this.y+offset[1]+(animalManager.animals[i].y)*size/50+200-size*.5,size,size)
             }
         }
+        ctx.fillStyle = "#000000"
+        ctx.fillRect(this.x+90,this.y+10,105,45)
+        renderManager.renderText("map",this.x+100,this.y+20,25)
         renderManager.render("icons","keyesc",this.x+10,this.y+10,50,50)
     }
 }
@@ -94,7 +97,7 @@ class MapUI extends UI{
 class CompendiumUI extends UI{
     render(renderManager,inputManager){
         ctx.fillRect(this.x,this.y,1000,500)
-        renderManager.renderText("compendium",this.x+100,this.y+15,40)
+        renderManager.renderText("compendium",this.x+100,this.y+20,25)
         renderManager.render("icons","keyesc",this.x+10,this.y+10,50,50)
     }
 }
