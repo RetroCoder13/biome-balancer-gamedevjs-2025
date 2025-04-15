@@ -1,26 +1,26 @@
 class UI{
-    constructor(player,w,h,triggerKey){
+    constructor(cameraManager,w,h,triggerKey){
         this.active = false
         this.w = w
         this.h = h
-        this.x = -this.w/2+player.x+player.w/2
-        this.y = -this.h/2+player.y+player.h/2
+        this.x = cameraManager.x-cameraManager.offsetX-offset[0]
+        this.y = cameraManager.y-cameraManager.offsetY-offset[1]
         this.triggerKey = triggerKey
     }
 
-    updatePosition(player){
-        this.x = -this.w/2+player.x+player.w/2
-        this.y = -this.h/2+player.y+player.h/2
+    updatePosition(cameraManager){
+        this.x = cameraManager.x-cameraManager.offsetX-offset[0]
+        this.y = cameraManager.y-cameraManager.offsetY-offset[1]
     }
 
-    update(renderManager,inputManager,player){
+    update(renderManager,inputManager,cameraManager){
         if(inputManager.getKey(this.triggerKey)){
             this.active = true
         } else if(inputManager.getKey("Escape")){
             this.active = false
         }
         if(this.active){
-            this.updatePosition(player)
+            this.updatePosition(cameraManager)
             this.render(renderManager,inputManager)
         }
     }
@@ -31,14 +31,14 @@ class UI{
 }
 
 class MapUI extends UI{
-    update(renderManager,inputManager,player,biomeManager){
+    update(renderManager,inputManager,cameraManager,player,biomeManager){
         if(inputManager.getKey(this.triggerKey)){
             this.active = true
         } else if(inputManager.getKey("Escape")){
             this.active = false
         }
         if(this.active){
-            this.updatePosition(player)
+            this.updatePosition(cameraManager)
             this.render(renderManager,inputManager,player,biomeManager)
         }
     }
@@ -47,7 +47,8 @@ class MapUI extends UI{
         ctx.fillStyle = "rgba(0,0,0,0.5)"
         ctx.fillRect(this.x,this.y,this.w,this.h)
         ctx.fillStyle = "#FFFFFF"
-        ctx.fillText("Map",this.x+50,this.y+50,100)
+        ctx.font = "25px Source Code Pro"
+        ctx.fillText("Map",this.x+475,this.y+30,50)
 
         let size = 4
         let offset = [300,50]
