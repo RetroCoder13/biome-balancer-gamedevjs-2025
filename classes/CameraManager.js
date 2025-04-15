@@ -32,7 +32,6 @@ class CameraManager{
             this.y = -this.mapHeight/2 + 250
             this.dy = 0
         }
-        console.log(this.x)
         ctx.translate(-this.dx,-this.dy)
         this.targetX = player.x
         this.targetY = player.y
