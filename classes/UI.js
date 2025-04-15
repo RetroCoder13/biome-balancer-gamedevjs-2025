@@ -44,6 +44,14 @@ class MapUI extends UI{
     }
 
     render(renderManager,inputManager,player,biomeManager,animalManager){
+        let biome = biomeManager.checkPlayerBiome(player)
+        let bgSize = 100
+        for(let i=0;i<1000/bgSize;i++){
+            for(let j=0;j<500/bgSize;j++){
+                renderManager.render("biome",biome,this.x+i*bgSize,this.y+j*bgSize,bgSize,bgSize)
+            }
+        }
+
         renderManager.render("menu","map",this.x,this.y,1000,500)
         ctx.fillStyle = "#FFFFFF"
         ctx.font = "25px Source Code Pro"
