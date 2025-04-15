@@ -18,7 +18,8 @@ class HUD{
 
     render(animalManager){
         let happyAnimals = animalManager.getHappyAnimals()
+        ctx.font = "25px Source Code Pro"
         ctx.fillText(`${happyAnimals.count}/${happyAnimals.total}`,this.x+50,this.y+50,1000)
-        renderManager.render("keys","m",this.x,this.y,50,50)
+        renderManager.render("keys","m",this.x+940,this.y+440,50,50)
     }
 }
