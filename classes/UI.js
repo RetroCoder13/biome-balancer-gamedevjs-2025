@@ -94,6 +94,6 @@ class MapUI extends UI{
 
 class CompendiumUI extends UI{
     render(renderManager,inputManager){
-
+        ctx.fillText("UI",this.x+100,this.y+100,100)
     }
 }
