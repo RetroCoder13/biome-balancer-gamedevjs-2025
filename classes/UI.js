@@ -31,7 +31,7 @@ class UI{
 }
 
 class MapUI extends UI{
-    update(renderManager,inputManager,cameraManager,player,biomeManager){
+    update(renderManager,inputManager,cameraManager,player,biomeManager,animalManager){
         if(inputManager.getKey(this.triggerKey)){
             this.active = true
         } else if(inputManager.getKey("Escape")){
@@ -39,11 +39,11 @@ class MapUI extends UI{
         }
         if(this.active){
             this.updatePosition(cameraManager)
-            this.render(renderManager,inputManager,player,biomeManager)
+            this.render(renderManager,inputManager,player,biomeManager,animalManager)
         }
     }
 
-    render(renderManager,inputManager,player,biomeManager){
+    render(renderManager,inputManager,player,biomeManager,animalManager){
         ctx.fillStyle = "rgba(0,0,0,0.5)"
         ctx.fillRect(this.x,this.y,this.w,this.h)
         ctx.fillStyle = "#FFFFFF"
@@ -52,9 +52,6 @@ class MapUI extends UI{
 
         let size = 4
         let offset = [300,50]
-
-        let renderPlayer = false
-        let playerPosition = []
 
         for(let i=0;i<biomeManager.width/biomeManager.size;i++){
             for(let j=0;j<biomeManager.height/biomeManager.size;j++){
@@ -78,17 +75,15 @@ class MapUI extends UI{
                 } else {
                     renderManager.render("biome","jungle",this.x+offset[0]+i*size,this.y+offset[1]+j*size,size,size)
                 }
-                if(biomeManager.x+i*biomeManager.size + biomeManager.size >= player.x
-                    && biomeManager.x+i*biomeManager.size <= player.x + player.w
-                    && biomeManager.y+j*biomeManager.size + biomeManager.size >= player.y
-                    && biomeManager.y+j*biomeManager.size <= player.y + player.h
-                    && !renderPlayer){
-                        renderPlayer = true
-                        playerPosition = [this.x+offset[0]+i*size - size*1.5,this.y+offset[1]+j*size - size*1.5]
-                }
             }
         }
-        renderManager.render("player","idle",playerPosition[0],playerPosition[1],size*3,size*3)
+        renderManager.render("player","idle",this.x+offset[0]+(player.x)*size/50+200-size*1.5,this.y+offset[1]+(player.y)*size/50+200-size*1.5,size*3,size*3)
+        for(let i=0;i<animalManager.animals.length;i++){
+            if(!animalManager.animals[i].happy){
+                ctx.fillStyle = "#FF0000"
+                ctx.fillRect(this.x+offset[0]+(animalManager.animals[i].x)*size/50+200-size*.5,this.y+offset[1]+(animalManager.animals[i].y)*size/50+200-size*.5,size,size)
+            }
+        }
         renderManager.render("icons","keyesc",this.x+10,this.y+10,50,50)
     }
 }

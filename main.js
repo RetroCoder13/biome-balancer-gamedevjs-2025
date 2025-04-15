@@ -1,7 +1,7 @@
 function update(){
     ctx.clearRect(cameraManager.x-cameraManager.offsetX-offset[0],cameraManager.y-cameraManager.offsetY-offset[1],canvas.width,canvas.height)
 
-    mapUI.update(renderManager,inputManager,cameraManager,player,biomeManager)
+    mapUI.update(renderManager,inputManager,cameraManager,player,biomeManager,animalManager)
     if(!mapUI.active){
         renderManager.update()
         biomeManager.update(renderManager)
