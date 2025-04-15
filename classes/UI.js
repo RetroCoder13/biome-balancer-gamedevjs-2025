@@ -44,8 +44,7 @@ class MapUI extends UI{
     }
 
     render(renderManager,inputManager,player,biomeManager,animalManager){
-        ctx.fillStyle = "rgba(0,0,0,0.5)"
-        ctx.fillRect(this.x,this.y,this.w,this.h)
+        renderManager.render("menu","map",this.x,this.y,1000,500)
         ctx.fillStyle = "#FFFFFF"
         ctx.font = "25px Source Code Pro"
         ctx.fillText("Map",this.x+475,this.y+30,50)

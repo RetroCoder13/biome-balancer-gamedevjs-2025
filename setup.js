@@ -35,6 +35,10 @@ renderManager.addImage("assets/textures/icons/keys/m.png","icons","keym")
 renderManager.createState("icons","keyr",false)
 renderManager.addImage("assets/textures/icons/keys/r.png","icons","keyr")
 
+renderManager.createObject("menu")
+renderManager.createState("menu","map",false)
+renderManager.addImage("assets/textures/menu/map.png","menu","map")
+
 renderManager.createObject("biome")
 renderManager.createState("biome","forest",false)
 renderManager.addImage("assets/textures/biome/forest.png","biome","forest")
