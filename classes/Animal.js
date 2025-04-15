@@ -9,6 +9,7 @@ class Animal{
         this.speed = speed
         this.type = type
         this.held = false
+        this.happy = false
     }
 
     update(renderManager,player){
@@ -59,6 +60,7 @@ class Animal{
             || (biome == "tundra" && this.type == "arctic fox")
             || (biome == "tundra" && this.type == "polar bear")
             || (biome == "tundra" && this.type == "reindeer")){
+                this.happy = true
                 renderManager.render("animal","home",this.x,this.y,this.w,this.h)
         }
     }

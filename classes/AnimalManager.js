@@ -7,6 +7,16 @@ class AnimalManager{
         this.animals.push(animal)
     }
 
+    getHappyAnimals(){
+        let count = 0
+        for(let i=0;i<this.animals.length;i++){
+            if(this.animals[i].happy){
+                count++
+            }
+        }
+        return {count:count, total:this.animals.length}
+    }
+
     positionAnimals(biomeManager){
         for(let i=0;i<this.animals.length;i++){
             let point = []

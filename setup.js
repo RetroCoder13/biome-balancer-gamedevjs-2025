@@ -36,6 +36,8 @@ renderManager.createState("biome","desert",false)
 renderManager.addImage("assets/textures/biome/desert.png","biome","desert")
 renderManager.createState("biome","tundra",false)
 renderManager.addImage("assets/textures/biome/tundra.png","biome","tundra")
+renderManager.createState("biome","jungle",false)
+renderManager.addImage("assets/textures/biome/jungle.png","biome","jungle")
 
 renderManager.createObject("player")
 renderManager.createState("player","idle",true,18)
@@ -76,3 +78,5 @@ audioManager.addSound("assets/sounds/music/music.wav","music","music",true)
 audioManager.play("music","music")
 
 var mapUI = new MapUI(cameraManager,1000,500,"m")
+
+var hud = new HUD(cameraManager,1000,500)
