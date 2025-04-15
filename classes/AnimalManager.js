@@ -53,21 +53,29 @@ class AnimalManager{
     }
 
     update(renderManager,inputManager,player){
-        if(inputManager.getKey("e") || inputManager.getKey("r")){
+        if(true){
             for(let i=0;i<this.animals.length;i++){
-                if(inputManager.getKey("r") && this.animals[i].held) {
-                    // this.animals[i].y += 50
-                    this.animals[i].targetY = player.y
-                    this.animals[i].held = false
-                    player.holdingAnimal = false
+                if(this.animals[i].held) {
+                    if(inputManager.getKey("r")){
+                        // this.animals[i].y += 50
+                        this.animals[i].targetY = player.y
+                        this.animals[i].held = false
+                        player.holdingAnimal = false
+                    } else {
+                        renderManager.render("icons","keyr",player.x+player.w,player.y-25,25,25)
+                    }
                 } else if(this.animals[i].x + this.animals[i].w >= player.x
                     && this.animals[i].x <= player.x + player.w
                     && this.animals[i].y + this.animals[i].h >= player.y
                     && this.animals[i].y <= player.y + player.h
-                    && inputManager.getKey("e") && !player.holdingAnimal
+                    && !player.holdingAnimal
                 ){
-                    this.animals[i].held = true
-                    player.holdingAnimal = true
+                    if(inputManager.getKey("e")){
+                        this.animals[i].held = true
+                        player.holdingAnimal = true
+                    } else {
+                        renderManager.render("icons","keye",player.x+player.w,player.y-25,25,25)
+                    }
                 }
             }
         }
