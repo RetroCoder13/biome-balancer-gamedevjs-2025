@@ -62,6 +62,8 @@ class Animal{
             || (biome == "tundra" && this.type == "reindeer")){
                 this.happy = true
                 renderManager.render("animal","home",this.x,this.y,this.w,this.h)
+        } else {
+            this.happy = false
         }
     }
 }
