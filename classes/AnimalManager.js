@@ -1,6 +1,8 @@
 class AnimalManager{
     constructor(){
         this.animals = []
+        this.canPickup = false
+        this.canDrop = false
     }
 
     addAnimal(animal){
@@ -53,6 +55,8 @@ class AnimalManager{
     }
 
     update(renderManager,inputManager,player){
+        this.canDrop = false
+        this.canPickup = false
         if(true){
             for(let i=0;i<this.animals.length;i++){
                 if(this.animals[i].held) {
@@ -62,7 +66,7 @@ class AnimalManager{
                         this.animals[i].held = false
                         player.holdingAnimal = false
                     } else {
-                        renderManager.render("icons","keyr",player.x+player.w,player.y-25,25,25)
+                        this.canDrop = true
                     }
                 } else if(this.animals[i].x + this.animals[i].w >= player.x
                     && this.animals[i].x <= player.x + player.w
@@ -74,7 +78,7 @@ class AnimalManager{
                         this.animals[i].held = true
                         player.holdingAnimal = true
                     } else {
-                        renderManager.render("icons","keye",player.x+player.w,player.y-25,25,25)
+                        this.canPickup = true
                     }
                 }
             }

@@ -22,5 +22,12 @@ class HUD{
         ctx.fillText(`Saved animals: ${happyAnimals.count}/${happyAnimals.total}`,this.x+25,this.y+50,1000)
         renderManager.render("icons","keym",this.x+880,this.y+440,50,50)
         renderManager.render("icons","map",this.x+940,this.y+440,50,50)
+
+        if(animalManager.canPickup){
+            renderManager.render("icons","keye",this.x+10,this.y+440,50,50)
+        }
+        if(animalManager.canDrop){
+            renderManager.render("icons","keyr",this.x+10,this.y+440,50,50)
+        }
     }
 }
