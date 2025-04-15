@@ -12,13 +12,15 @@ ctx.translate(offset[0],offset[1])
 
 ctx.imageSmoothingEnabled = false
 
+let mapSize = [5000,5000]
+
 var player = new Player(0,0,50,50,2)
 var renderManager = new RenderManager()
 var audioManager = new AudioManager()
-var cameraManager = new CameraManager(player.x,player.y)
+var cameraManager = new CameraManager(player.x,player.y,mapSize[0],mapSize[1])
 var inputManager = new InputManager(cameraManager)
 var animalManager = new AnimalManager()
-var biomeManager = new BiomeManager(5000,5000,50,player)
+var biomeManager = new BiomeManager(mapSize[0],mapSize[1],50,player)
 biomeManager.generateBiomes()
 
 renderManager.createObject("biome")
@@ -55,5 +57,10 @@ animalManager.addAnimal(new Animal(200,100,50,50,1,"rabbit"))
 renderManager.createObject("rabbit")
 renderManager.createState("rabbit","idle",true,28)
 renderManager.addImages("assets/textures/animals/rabbit/idle","rabbit","idle",28)
+
+audioManager.createGroup("music")
+audioManager.createState("music","music")
+audioManager.addSound("assets/sounds/music/music.wav","music","music",true)
+audioManager.play("music","music")
 
 var mapUI = new MapUI(cameraManager,1000,500,"m")
