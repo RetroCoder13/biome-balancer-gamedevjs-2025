@@ -72,8 +72,7 @@ class MapUI extends UI{
                 } else if(biome == "desert"){
                     renderManager.render("biome","desert",this.x+offset[0]+i*size,this.y+offset[1]+j*size,size,size)
                 } else if(biome == "ocean"){
-                    ctx.fillStyle = "#0000FF"
-                    ctx.fillRect(this.x+offset[0]+i*size,this.y+offset[1]+j*size,size,size)
+                    renderManager.render("biome","ocean",this.x+offset[0]+i*size,this.y+offset[1]+j*size,size,size)
                 } else if(biome == "tundra"){
                     renderManager.render("biome","tundra",this.x+offset[0]+i*size,this.y+offset[1]+j*size,size,size)
                 } else {
@@ -95,6 +94,7 @@ class MapUI extends UI{
 class CompendiumUI extends UI{
     render(renderManager,inputManager){
         ctx.fillRect(this.x,this.y,1000,500)
-        renderManager.renderText("compendium/",this.x+100,this.y+100,25)
+        renderManager.renderText("compendium",this.x+100,this.y+15,40)
+        renderManager.render("icons","keyesc",this.x+10,this.y+10,50,50)
     }
 }

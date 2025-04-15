@@ -59,8 +59,7 @@ class BiomeManager{
                 } else if(biome == "desert"){
                     renderManager.render("biome","desert",this.x+i*this.size,this.y+j*this.size,this.size,this.size)
                 } else if(biome == "ocean"){
-                    ctx.fillStyle = "#0000FF"
-                    ctx.fillRect(this.x+i*this.size,this.y+j*this.size,this.size,this.size)
+                    renderManager.render("biome","ocean",this.x+i*this.size,this.y+j*this.size,this.size,this.size)
                 } else if(biome == "tundra"){
                     renderManager.render("biome","tundra",this.x+i*this.size,this.y+j*this.size,this.size,this.size)
                 } else {
