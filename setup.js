@@ -54,6 +54,8 @@ renderManager.addImages("assets/textures/player/swim/animal","player","swimAnima
 animalManager.addAnimal(new Animal(100,100,50,50,1,"rabbit"))
 animalManager.addAnimal(new Animal(200,100,50,50,1,"rabbit"))
 
+animalManager.positionAnimals(biomeManager)
+
 renderManager.createObject("rabbit")
 renderManager.createState("rabbit","idle",true,28)
 renderManager.addImages("assets/textures/animals/rabbit/idle","rabbit","idle",28)

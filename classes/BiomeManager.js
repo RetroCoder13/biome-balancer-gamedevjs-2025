@@ -31,6 +31,18 @@ class BiomeManager{
         return biome
     }
 
+    checkAnimalBiome(animal){
+        let biome = ""
+        let value = 100000000000
+        for(let p=0;p<this.points.length;p++){
+            if(Math.sqrt((this.x+this.points[p][0]-animal.x)**2 + (this.y+this.points[p][1]-animal.y)**2) < value){
+                value = Math.sqrt((this.x+this.points[p][0]-animal.x)**2 + (this.y+this.points[p][1]-animal.y)**2)
+                biome = this.biomes[p]
+            }
+        }
+        return biome
+    }
+
     update(renderManager){
         for(let i=0;i<this.width/this.size;i++){
             for(let j=0;j<this.height/this.size;j++){
