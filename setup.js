@@ -56,6 +56,10 @@ animalManager.addAnimal(new Animal(200,100,50,50,1,"rabbit"))
 
 animalManager.positionAnimals(biomeManager)
 
+renderManager.createObject("animal")
+renderManager.createState("animal","home",true,10)
+renderManager.addImages("assets/textures/animals/home","animal","home",10)
+
 renderManager.createObject("rabbit")
 renderManager.createState("rabbit","idle",true,28)
 renderManager.addImages("assets/textures/animals/rabbit/idle","rabbit","idle",28)

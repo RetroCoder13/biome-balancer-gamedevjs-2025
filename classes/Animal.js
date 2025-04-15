@@ -42,5 +42,24 @@ class Animal{
         } else {
             renderManager.render(this.type,"idle",this.x,this.y,this.w,this.h)
         }
+
+        let biome = biomeManager.checkAnimalBiome(this)
+        if((biome == "forest" && this.type == "rabbit")
+            || (biome == "forest" && this.type == "fox")
+            || (biome == "forest" && this.type == "deer")
+            || (biome == "desert" && this.type == "desert fox")
+            || (biome == "desert" && this.type == "camel")
+            || (biome == "desert" && this.type == "desert mouse")
+            || (biome == "jungle" && this.type == "panda")
+            || (biome == "jungle" && this.type == "monkey")
+            || (biome == "jungle" && this.type == "tiger")
+            || (biome == "ocean" && this.type == "fish")
+            || (biome == "ocean" && this.type == "turtle")
+            || (biome == "ocean" && this.type == "crab")
+            || (biome == "tundra" && this.type == "arctic fox")
+            || (biome == "tundra" && this.type == "polar bear")
+            || (biome == "tundra" && this.type == "reindeer")){
+                renderManager.render("animal","home",this.x,this.y,this.w,this.h)
+        }
     }
 }
