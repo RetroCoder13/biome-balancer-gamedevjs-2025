@@ -54,6 +54,7 @@ class MapUI extends UI{
         let offset = [300,50]
 
         let renderPlayer = false
+        let playerPosition = []
 
         for(let i=0;i<biomeManager.width/biomeManager.size;i++){
             for(let j=0;j<biomeManager.height/biomeManager.size;j++){
@@ -84,10 +85,11 @@ class MapUI extends UI{
                     && biomeManager.y+j*biomeManager.size <= player.y + player.h
                     && !renderPlayer){
                         renderPlayer = true
-                        renderManager.render("player","idle",this.x+offset[0]+i*size,this.y+offset[1]+j*size,size,size)
+                        playerPosition = [this.x+offset[0]+i*size - size*1.5,this.y+offset[1]+j*size - size*1.5]
                 }
             }
         }
+        renderManager.render("player","idle",playerPosition[0],playerPosition[1],size*3,size*3)
     }
 }
 
