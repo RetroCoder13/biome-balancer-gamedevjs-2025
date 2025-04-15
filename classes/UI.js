@@ -76,7 +76,7 @@ class MapUI extends UI{
                 } else if(biome == "tundra"){
                     renderManager.render("biome","tundra",this.x+offset[0]+i*size,this.y+offset[1]+j*size,size,size)
                 } else {
-                    renderManager.render("biome","jungle",this.x+i*this.size,this.y+j*this.size,this.size,this.size)
+                    renderManager.render("biome","jungle",this.x+offset[0]+i*size,this.y+offset[1]+j*size,size,size)
                 }
                 if(biomeManager.x+i*biomeManager.size + biomeManager.size >= player.x
                     && biomeManager.x+i*biomeManager.size <= player.x + player.w
