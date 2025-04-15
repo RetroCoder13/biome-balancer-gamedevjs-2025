@@ -65,8 +65,10 @@ renderManager.addImages("assets/textures/player/swim/idle","player","idleSwim",3
 renderManager.createState("player","swimAnimal",true,8)
 renderManager.addImages("assets/textures/player/swim/animal","player","swimAnimal",8)
 
-animalManager.addAnimal(new Animal(100,100,50,50,1,"rabbit"))
-animalManager.addAnimal(new Animal(200,100,50,50,1,"rabbit"))
+animalManager.addAnimal(new Animal(0,0,50,50,1,"rabbit"))
+animalManager.addAnimal(new Animal(0,0,50,50,1,"rabbit"))
+animalManager.addAnimal(new Animal(0,0,100,100,1,"panda"))
+animalManager.addAnimal(new Animal(0,0,100,100,1,"panda"))
 
 animalManager.positionAnimals(biomeManager)
 
@@ -77,6 +79,10 @@ renderManager.addImages("assets/textures/animals/home","animal","home",10)
 renderManager.createObject("rabbit")
 renderManager.createState("rabbit","idle",true,28)
 renderManager.addImages("assets/textures/animals/rabbit/idle","rabbit","idle",28)
+
+renderManager.createObject("panda")
+renderManager.createState("panda","idle",true,39)
+renderManager.addImages("assets/textures/animals/panda/idle","panda","idle",39)
 
 audioManager.createGroup("music")
 audioManager.createState("music","music")
