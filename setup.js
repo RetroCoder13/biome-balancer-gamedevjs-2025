@@ -23,6 +23,8 @@ var animalManager = new AnimalManager()
 var biomeManager = new BiomeManager(mapSize[0],mapSize[1],50,player)
 biomeManager.generateBiomes()
 
+renderManager.loadFont("assets/textures/font")
+
 renderManager.createObject("icons")
 renderManager.createState("icons","map",false)
 renderManager.addImage("assets/textures/icons/map.png","icons","map")
@@ -94,5 +96,6 @@ audioManager.addSound("assets/sounds/music/music.wav","music","music",true)
 audioManager.play("music","music")
 
 var mapUI = new MapUI(cameraManager,1000,500,"m")
+var compendiumUI = new CompendiumUI(cameraManager,1000,500,"c")
 
 var hud = new HUD(cameraManager,1000,500)

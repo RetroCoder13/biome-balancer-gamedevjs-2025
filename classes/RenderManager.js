@@ -5,6 +5,23 @@ class RenderManager{
         this.frames = 0
     }
 
+    loadFont(path){
+        this.createObject("font")
+        for(let i=97;i<97+26;i++){
+            let character = String.fromCharCode(i)
+            this.createState("font",character,false)
+            this.addImage(`${path}/${character}.png`,"font",character)
+        }
+        for(let i=0;i<10;i++){
+            this.createState("font",i,false)
+            this.addImage(`${path}/${i}.png`,"font",i)
+        }
+        this.createState("font","/",false)
+        this.addImage(`${path}/slash.png`,"font","/")
+        this.createState("font",":",false)
+        this.addImage(`${path}/colon.png`,"font",":")
+    }
+
     createObject(object){
         this.images[object] = {}
     }
@@ -34,6 +51,15 @@ class RenderManager{
             ctx.drawImage(this.images[object][state].images[this.frames % this.images[object][state].frames],x,y,w,h)
         } else {
             ctx.drawImage(this.images[object][state].images[0],x,y,w,h)
+        }
+    }
+
+    renderText(text,x,y,w){
+        for(let i=0;i<text.length;i++){
+            let character = text[i]
+            if(character != " "){
+                this.render("font",character,x+i*(w+w/5),y,w,w)
+            }
         }
     }
 
