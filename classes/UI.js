@@ -53,9 +53,6 @@ class MapUI extends UI{
         }
 
         renderManager.render("menu","map",this.x,this.y,1000,500)
-        ctx.fillStyle = "#FFFFFF"
-        ctx.font = "25px Source Code Pro"
-        ctx.fillText("Map",this.x+475,this.y+30,50)
 
         let size = 4
         let offset = [300,50]
