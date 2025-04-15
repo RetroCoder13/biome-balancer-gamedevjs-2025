@@ -10,7 +10,7 @@ class Player{
         this.holdingAnimal = false
     }
 
-    update(renderManager,inputManager){
+    update(renderManager,inputManager,biomeManager){
         let movement = [0,0]
         let move = false
         if(inputManager.getKey("w")){
@@ -49,15 +49,25 @@ class Player{
         // ctx.fillRect(this.x,this.y,this.w,this.h)
         // ctx.drawImage(this.image,this.x,this.y,this.w,this.h)
         if(this.holdingAnimal){
-            if(move){
+            if(biomeManager.checkPlayerBiome(this) == "ocean"){
+                renderManager.render("player","swimAnimal",this.x,this.y,this.w,this.h)
+            } else if(move){
                 renderManager.render("player","walkAnimal",this.x,this.y,this.w,this.h)
             } else {
                 renderManager.render("player","idleAnimal",this.x,this.y,this.w,this.h)
             }
         } else if(move){
-            renderManager.render("player","walk",this.x,this.y,this.w,this.h)
+            if(biomeManager.checkPlayerBiome(this) == "ocean"){
+                renderManager.render("player","swim",this.x,this.y,this.w,this.h)
+            } else {
+                renderManager.render("player","walk",this.x,this.y,this.w,this.h)
+            }
         } else {
-            renderManager.render("player","idle",this.x,this.y,this.w,this.h)
+            if(biomeManager.checkPlayerBiome(this) == "ocean"){
+                renderManager.render("player","idleSwim",this.x,this.y,this.w,this.h)
+            } else {
+                renderManager.render("player","idle",this.x,this.y,this.w,this.h)
+            }
         }
     }
 }

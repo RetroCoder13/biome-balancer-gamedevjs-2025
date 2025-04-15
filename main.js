@@ -5,7 +5,7 @@ function update(){
     if(!mapUI.active){
         renderManager.update()
         biomeManager.update(renderManager)
-        player.update(renderManager,inputManager)
+        player.update(renderManager,inputManager,biomeManager)
         animalManager.update(renderManager,inputManager,player)
     }
     cameraManager.update(player)
