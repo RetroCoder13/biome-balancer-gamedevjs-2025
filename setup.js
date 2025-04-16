@@ -82,6 +82,8 @@ for(let i=0;i<15;i++){
     let animal = animalManager.animalTypes[Math.round(Math.random()*(animalManager.animalTypes.length-1))]
     if(animal == "panda"){
         animalManager.addAnimal(new Animal(0,0,100,100,1,animal))
+    } else if(animal == "fish"){
+        animalManager.addAnimal(new Animal(0,0,50,25,1,animal))
     } else {
         animalManager.addAnimal(new Animal(0,0,50,50,1,animal))
     }
@@ -100,6 +102,12 @@ renderManager.addImages("assets/textures/animals/rabbit/idle","rabbit","idle",28
 renderManager.createObject("panda")
 renderManager.createState("panda","idle",true,39)
 renderManager.addImages("assets/textures/animals/panda/idle","panda","idle",39)
+
+renderManager.createObject("fish")
+renderManager.createState("fish","idle",true,8)
+renderManager.addImages("assets/textures/animals/fish/idle","fish","idle",8)
+renderManager.createState("fish","swim",true,16)
+renderManager.addImages("assets/textures/animals/fish/swim","fish","swim",16)
 
 // for(let i=0;i<1000;i++){
     let object = objectManager.objectTypes[Math.round(Math.random()*(objectManager.objectTypes.length-1))]

@@ -38,7 +38,9 @@ class Animal{
         this.x += lerp(this.x,this.targetX,0.5)
         this.y += lerp(this.y,this.targetY,0.5)
 
-        if(move){
+        if(this.type == "fish" && biomeManager.checkAnimalBiome(this) == "ocean"){
+            renderManager.render(this.type,"swim",this.x,this.y,this.w,this.h)
+        } else if(move){
             renderManager.render(this.type,"walk",this.x,this.y,this.w,this.h)
         } else {
             renderManager.render(this.type,"idle",this.x,this.y,this.w,this.h)
