@@ -25,8 +25,8 @@ class AnimalManager{
             point = [biomeManager.x+Math.round(Math.random()*(biomeManager.width-biomeManager.size*2)/biomeManager.size)*biomeManager.size, biomeManager.y+Math.round(Math.random()*(biomeManager.height-biomeManager.size*2)/biomeManager.size)*biomeManager.size]
             this.animals[i].targetX = point[0]
             this.animals[i].x = point[0]
-            this.animals[i].targetY = point[0]
-            this.animals[i].y = point[0]
+            this.animals[i].targetY = point[1]
+            this.animals[i].y = point[1]
             let biome = biomeManager.checkAnimalBiome(this.animals[i])
             while((biome == "forest" && this.animals[i].type == "rabbit")
                 || (biome == "forest" && this.animals[i].type == "fox")
