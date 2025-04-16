@@ -95,6 +95,11 @@ class MapUI extends UI{
 }
 
 class CompendiumUI extends UI{
+    constructor(cameraManager,w,h,triggerKey){
+        super(cameraManager,w,h,triggerKey)
+        this.foundAnimals = []
+    }
+
     update(renderManager,inputManager,cameraManager,animalManager){
         if(inputManager.getKey(this.triggerKey)){
             this.active = true
@@ -122,12 +127,16 @@ class CompendiumUI extends UI{
             let k = i % 5
             let x = this.x + offset[0] + k*(size+10)
             let y = this.y + offset[1] + j*(size+10)
-            if(mouse.pos[0] >= x && mouse.pos[0] <= x + size && mouse.pos[1] >= y && mouse.pos[1] <= y + size){
-                animal = animalManager.animalTypes[i]
-                ctx.fillStyle = "#333333"
+            if(this.foundAnimals.includes(animalManager.animalTypes[i])){
+                if(mouse.pos[0] >= x && mouse.pos[0] <= x + size && mouse.pos[1] >= y && mouse.pos[1] <= y + size){
+                    animal = animalManager.animalTypes[i]
+                    ctx.fillStyle = "#333333"
+                }
+                ctx.fillRect(x,y,size,size)
+                renderManager.render(animalManager.animalTypes[i],"idle",this.x + offset[0] + k*(size+10),this.y + offset[1] + j*(size+10),size,size)
+            } else {
+                ctx.fillRect(x,y,size,size)
             }
-            ctx.fillRect(x,y,size,size)
-            renderManager.render(animalManager.animalTypes[i],"idle",this.x + offset[0] + k*(size+10),this.y + offset[1] + j*(size+10),size,size)
         }
         ctx.fillStyle = "#AAAAAA"
         ctx.fillRect(this.x + offset[0] + 5*(size+10),this.y + offset[1], 450,300)
