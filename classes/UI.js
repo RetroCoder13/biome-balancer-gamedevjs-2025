@@ -129,6 +129,17 @@ class CompendiumUI extends UI{
             renderManager.render(animalManager.animalTypes[i],"idle",this.x + offset[0] + k*(size+10),this.y + offset[1] + j*(size+10),size,size)
         }
         ctx.fillRect(this.x + offset[0] + 5*(size+10),this.y + offset[1], 450,300)
-        renderManager.renderText(animal,this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 10,20)
+        renderManager.renderText(animal,this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 10,30)
+        if(animal == "rabbit" || animal == "fox" || animal == "deer"){
+            renderManager.renderText("biome: forest",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 50,20)
+        } else if(animal == "desert fox" || animal == "camel" || animal == "desert mouse"){
+            renderManager.renderText("biome: desert",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 50,20)
+        } else if(animal == "panda" || animal == "monkey" || animal == "tiger"){
+            renderManager.renderText("biome: jungle",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 50,20)
+        } else if(animal == "fish" || animal == "turtle" || animal == "crab"){
+            renderManager.renderText("biome: ocean",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 50,20)
+        } else if(animal == "arctic fox" || animal == "polar bear" || animal == "reindeer"){
+            renderManager.renderText("biome: tundra",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 50,20)
+        }
     }
 }
