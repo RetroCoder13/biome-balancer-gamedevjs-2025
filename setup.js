@@ -115,7 +115,11 @@ objectManager.addObject(new Mainframe(0,0,45,45))
 objectManager.addObject(new Keycard(0,0,45,45))
 for(let i=0;i<1000/5*2;i++){
     let object = objectManager.objectTypes[Math.round(Math.random()*(objectManager.objectTypes.length-1))]
-    objectManager.addObject(new CollisionObject(0,0,45,45,object))
+    if(object == "iceberg"){
+        objectManager.addObject(new CollisionObject(0,0,90,90,object))
+    } else {
+        objectManager.addObject(new CollisionObject(0,0,45,45,object))
+    }
 }
 
 objectManager.positionObjects(biomeManager)
@@ -133,6 +137,8 @@ renderManager.createState("objects","bamboo",false)
 renderManager.addImage("assets/textures/biome/bamboo.png","objects","bamboo")
 renderManager.createState("objects","log",false)
 renderManager.addImage("assets/textures/biome/log.png","objects","log")
+renderManager.createState("objects","iceberg",false)
+renderManager.addImage("assets/textures/biome/iceberg.png","objects","iceberg")
 
 audioManager.createGroup("music")
 audioManager.createState("music","music")
