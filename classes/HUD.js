@@ -11,12 +11,12 @@ class HUD{
         this.y = cameraManager.y-cameraManager.offsetY-offset[1]
     }
 
-    update(renderManager,cameraManager,animalManager){
+    update(renderManager,cameraManager,animalManager,objectManager){
         this.updatePosition(cameraManager)
-        this.render(renderManager,animalManager)
+        this.render(renderManager,animalManager,objectManager)
     }
 
-    render(renderManager,animalManager){
+    render(renderManager,animalManager,objectManager){
         let happyAnimals = animalManager.getHappyAnimals()
         ctx.fillStyle = "#000000"
         ctx.fillRect(this.x+10,this.y+10,370,45)
@@ -31,6 +31,9 @@ class HUD{
         }
         if(animalManager.canDrop){
             renderManager.render("icons","keyr",this.x+10,this.y+440,50,50)
+        }
+        if(objectManager.keyCardFound){
+            renderManager.render("objects","keycard",this.x+940,this.y+10,50,50)
         }
     }
 }
