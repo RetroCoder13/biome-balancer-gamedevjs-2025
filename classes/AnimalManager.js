@@ -3,6 +3,8 @@ class AnimalManager{
         this.animals = []
         this.canPickup = false
         this.canDrop = false
+        // this.animalTypes = ["rabbit","fox","deer","desert fox","camel","desert mouse","panda","monkey","tiger","fish","turtle","crab","arctic fox","polar bear","reindeer"]
+        this.animalTypes = ["rabbit","panda"]
     }
 
     addAnimal(animal){
@@ -51,7 +53,6 @@ class AnimalManager{
                 biome = biomeManager.checkAnimalBiome(this.animals[i])
             }
         }
-        console.log(this.animals)
     }
 
     update(renderManager,inputManager,player){

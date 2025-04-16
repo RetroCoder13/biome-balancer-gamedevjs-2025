@@ -73,21 +73,14 @@ renderManager.addImages("assets/textures/player/swim/idle","player","idleSwim",3
 renderManager.createState("player","swimAnimal",true,8)
 renderManager.addImages("assets/textures/player/swim/animal","player","swimAnimal",8)
 
-animalManager.addAnimal(new Animal(0,0,50,50,1,"rabbit"))
-animalManager.addAnimal(new Animal(0,0,50,50,1,"rabbit"))
-animalManager.addAnimal(new Animal(0,0,100,100,1,"panda"))
-animalManager.addAnimal(new Animal(0,0,100,100,1,"panda"))
-animalManager.addAnimal(new Animal(0,0,100,100,1,"panda"))
-animalManager.addAnimal(new Animal(0,0,50,50,1,"rabbit"))
-animalManager.addAnimal(new Animal(0,0,50,50,1,"rabbit"))
-animalManager.addAnimal(new Animal(0,0,100,100,1,"panda"))
-animalManager.addAnimal(new Animal(0,0,100,100,1,"panda"))
-animalManager.addAnimal(new Animal(0,0,100,100,1,"panda"))
-animalManager.addAnimal(new Animal(0,0,50,50,1,"rabbit"))
-animalManager.addAnimal(new Animal(0,0,50,50,1,"rabbit"))
-animalManager.addAnimal(new Animal(0,0,100,100,1,"panda"))
-animalManager.addAnimal(new Animal(0,0,100,100,1,"panda"))
-animalManager.addAnimal(new Animal(0,0,100,100,1,"panda"))
+for(let i=0;i<15;i++){
+    let animal = animalManager.animalTypes[Math.round(Math.random()*(animalManager.animalTypes.length-1))]
+    if(animal == "panda"){
+        animalManager.addAnimal(new Animal(0,0,100,100,1,animal))
+    } else {
+        animalManager.addAnimal(new Animal(0,0,50,50,1,animal))
+    }
+}
 
 animalManager.positionAnimals(biomeManager)
 
