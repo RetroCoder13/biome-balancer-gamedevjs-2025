@@ -1,10 +1,12 @@
 class InputManager{
-    constructor(cameraManager){
+    constructor(cameraManager,offsetX,offsetY){
         this.mouse = {pos:[0,0],click:false}
         this.keys = {}
+        this.offsetX = offsetX
+        this.offsetY = offsetY
         var that = this
         addEventListener('mousedown',function(e){
-            that.mouse.pos = [e.offsetX + cameraManager.x,e.offsetY + cameraManager.y]
+            that.mouse.pos = [e.offsetX + cameraManager.x - that.offsetX,e.offsetY + cameraManager.y - that.offsetY]
             that.mouse.click = true
         })
 

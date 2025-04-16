@@ -109,16 +109,26 @@ class CompendiumUI extends UI{
 
     render(renderManager,inputManager,animalManager){
         let size = 75
+        let offset = [100,80]
         ctx.fillStyle = "#000000"
         ctx.fillRect(this.x,this.y,1000,500)
         renderManager.renderText("compendium",this.x+100,this.y+20,25)
         renderManager.render("icons","keyesc",this.x+10,this.y+10,50,50)
+        let mouse = inputManager.getMouse()
+        let animal = ""
         ctx.fillStyle = "#AAAAAA"
         for(let i=0;i<animalManager.animalTypes.length;i++){
             let j = Math.floor(i/5)
             let k = i % 5
-            ctx.fillRect(this.x + 290 + k*(size+10),this.y + 80 + j*(size+10),size,size)
-            renderManager.render(animalManager.animalTypes[i],"idle",this.x + 290 + k*(size+10),this.y + 80 + j*(size+10),size,size)
+            let x = this.x + offset[0] + k*(size+10)
+            let y = this.y + offset[1] + j*(size+10)
+            if(mouse.pos[0] >= x && mouse.pos[0] <= x + size && mouse.pos[1] >= y && mouse.pos[1] <= y + size){
+                animal = animalManager.animalTypes[i]
+            }
+            ctx.fillRect(x,y,size,size)
+            renderManager.render(animalManager.animalTypes[i],"idle",this.x + offset[0] + k*(size+10),this.y + offset[1] + j*(size+10),size,size)
         }
+        ctx.fillRect(this.x + offset[0] + 5*(size+10),this.y + offset[1], 450,300)
+        renderManager.renderText(animal,this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 10,20)
     }
 }
