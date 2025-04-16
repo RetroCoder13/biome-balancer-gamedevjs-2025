@@ -5,7 +5,7 @@ function update(){
         mapUI.update(renderManager,inputManager,cameraManager,player,biomeManager,animalManager)
     }
     if(!mapUI.active){
-        compendiumUI.update(renderManager,inputManager,cameraManager)
+        compendiumUI.update(renderManager,inputManager,cameraManager,animalManager)
     }
     if(!mapUI.active && !compendiumUI.active){
         renderManager.update()

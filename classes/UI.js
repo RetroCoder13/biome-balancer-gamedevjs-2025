@@ -95,9 +95,30 @@ class MapUI extends UI{
 }
 
 class CompendiumUI extends UI{
-    render(renderManager,inputManager){
+    update(renderManager,inputManager,cameraManager,animalManager){
+        if(inputManager.getKey(this.triggerKey)){
+            this.active = true
+        } else if(inputManager.getKey("Escape")){
+            this.active = false
+        }
+        if(this.active){
+            this.updatePosition(cameraManager)
+            this.render(renderManager,inputManager,animalManager)
+        }
+    }
+
+    render(renderManager,inputManager,animalManager){
+        let size = 75
+        ctx.fillStyle = "#000000"
         ctx.fillRect(this.x,this.y,1000,500)
         renderManager.renderText("compendium",this.x+100,this.y+20,25)
         renderManager.render("icons","keyesc",this.x+10,this.y+10,50,50)
+        ctx.fillStyle = "#AAAAAA"
+        for(let i=0;i<animalManager.animalTypes.length;i++){
+            let j = Math.floor(i/5)
+            let k = i % 5
+            ctx.fillRect(this.x + 290 + k*(size+10),this.y + 80 + j*(size+10),size,size)
+            renderManager.render(animalManager.animalTypes[i],"idle",this.x + 290 + k*(size+10),this.y + 80 + j*(size+10),size,size)
+        }
     }
 }
