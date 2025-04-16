@@ -4,6 +4,7 @@ class ObjectManager{
         // this.objectTypes = ["tree","palm tree","log","iceberg","bamboo"]
         this.objectTypes = ["log","iceberg","bamboo"]
         this.keyCardFound = false
+        this.mainframeActive = true
     }
 
     addObject(object){
@@ -39,6 +40,7 @@ class ObjectManager{
                     this.keyCardFound = true
                 } else if(this.objects[i] instanceof Mainframe && this.keyCardFound){
                     this.objects[i].active = false
+                    this.mainframeActive = false
                 } else {
                     if(player.y > this.objects[i].y - player.h && player.y - player.h/2 < this.objects[i].y){
                         player.targetY -= 1

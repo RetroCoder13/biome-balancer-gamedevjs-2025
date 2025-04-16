@@ -32,7 +32,7 @@ class HUD{
         if(animalManager.canDrop){
             renderManager.render("icons","keyr",this.x+10,this.y+440,50,50)
         }
-        if(objectManager.keyCardFound){
+        if(objectManager.keyCardFound && objectManager.mainframeActive){
             renderManager.render("objects","keycard",this.x+940,this.y+10,50,50)
         }
     }
