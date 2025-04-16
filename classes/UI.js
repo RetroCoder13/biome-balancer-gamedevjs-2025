@@ -64,7 +64,7 @@ class MapUI extends UI{
                 for(let p=0;p<biomeManager.points.length;p++){
                     if(Math.sqrt((biomeManager.points[p][0]-i*biomeManager.size)**2 + (biomeManager.points[p][1]-j*biomeManager.size)**2) < value){
                         value = Math.sqrt((biomeManager.points[p][0]-i*biomeManager.size)**2 + (biomeManager.points[p][1]-j*biomeManager.size)**2)
-                        biome = biomeManager.biomes[p]
+                        biome = biomeManager.biomes[p%biomeManager.biomes.length]
                     }
                 }
                 if(biome == "forest"){

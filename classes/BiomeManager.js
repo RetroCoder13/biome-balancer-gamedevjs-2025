@@ -10,7 +10,7 @@ class BiomeManager{
     }
 
     generateBiomes(){
-        for(let i=0;i<this.biomes.length;i++){
+        for(let i=0;i<this.biomes.length*2;i++){
             let randomPoint = [this.size+Math.round(Math.random()*(this.width-this.size*2)/this.size)*this.size,this.size+Math.round(Math.random()*(this.height-this.size*2)/this.size)*this.size]
             while(JSON.stringify(this.points).includes(JSON.stringify(randomPoint))){
                 randomPoint = [this.size+Math.round(Math.random()*(this.width-this.size*2)/this.size)*this.size,this.size+Math.round(Math.random()*(this.height-this.size*2)/this.size)*this.size]
@@ -25,7 +25,7 @@ class BiomeManager{
         for(let p=0;p<this.points.length;p++){
             if(Math.sqrt((this.x+this.points[p][0]-player.x)**2 + (this.y+this.points[p][1]-player.y)**2) < value){
                 value = Math.sqrt((this.x+this.points[p][0]-player.x)**2 + (this.y+this.points[p][1]-player.y)**2)
-                biome = this.biomes[p]
+                biome = this.biomes[p%this.biomes.length]
             }
         }
         return biome
@@ -37,7 +37,7 @@ class BiomeManager{
         for(let p=0;p<this.points.length;p++){
             if(Math.sqrt((this.x+this.points[p][0]-animal.x)**2 + (this.y+this.points[p][1]-animal.y)**2) < value){
                 value = Math.sqrt((this.x+this.points[p][0]-animal.x)**2 + (this.y+this.points[p][1]-animal.y)**2)
-                biome = this.biomes[p]
+                biome = this.biomes[p%this.biomes.length]
             }
         }
         return biome
@@ -51,7 +51,7 @@ class BiomeManager{
                 for(let p=0;p<this.points.length;p++){
                     if(Math.sqrt((this.points[p][0]-i*this.size)**2 + (this.points[p][1]-j*this.size)**2) < value){
                         value = Math.sqrt((this.points[p][0]-i*this.size)**2 + (this.points[p][1]-j*this.size)**2)
-                        biome = this.biomes[p]
+                        biome = this.biomes[p%this.biomes.length]
                     }
                 }
                 if(biome == "forest"){
