@@ -41,6 +41,8 @@ renderManager.createState("icons","keym",false)
 renderManager.addImage("assets/textures/icons/keys/m.png","icons","keym")
 renderManager.createState("icons","keyr",false)
 renderManager.addImage("assets/textures/icons/keys/r.png","icons","keyr")
+renderManager.createState("icons","question",false)
+renderManager.addImage("assets/textures/icons/question.png","icons","question")
 
 renderManager.createObject("menu")
 renderManager.createState("menu","map",false)
