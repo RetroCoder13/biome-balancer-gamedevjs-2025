@@ -23,6 +23,8 @@ class HUD{
         renderManager.renderText(`saved animals: ${happyAnimals.count}/${happyAnimals.total}`,this.x+25,this.y+25,15)
         renderManager.render("icons","keym",this.x+880,this.y+440,50,50)
         renderManager.render("icons","map",this.x+940,this.y+440,50,50)
+        renderManager.render("icons","keyc",this.x+880,this.y+380,50,50)
+        renderManager.render("icons","compendium",this.x+940,this.y+380,50,50)
 
         if(animalManager.canPickup){
             renderManager.render("icons","keye",this.x+10,this.y+440,50,50)
