@@ -8,6 +8,34 @@ class CollisionObject{
     }
 
     update(){
+        renderManager.render("objects",this.type,this.x,this.y,this.w,this.h)
+    }
+}
 
+class Keycard extends CollisionObject{
+    constructor(x,y,w,h){
+        super(x,y,w,h,"keycard")
+        this.found = false
+    }
+
+    update(){
+        if(!this.found){
+            renderManager.render("objects","keycard",this.x,this.y,this.w,this.h)
+        }
+    }
+}
+
+class Mainframe extends CollisionObject{
+    constructor(x,y,w,h){
+        super(x,y,w,h,"mainframe")
+        this.active = true
+    }
+
+    update(){
+        if(this.active){
+            renderManager.render("objects","mainframe",this.x,this.y,this.w,this.h)
+        } else {
+            renderManager.render("objects","mainframeDead",this.x,this.y,this.w,this.h)
+        }
     }
 }

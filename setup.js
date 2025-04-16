@@ -109,14 +109,24 @@ renderManager.addImages("assets/textures/animals/fish/idle","fish","idle",8)
 renderManager.createState("fish","swim",true,16)
 renderManager.addImages("assets/textures/animals/fish/swim","fish","swim",16)
 
+objectManager.addObject(new Mainframe(0,0,45,45))
+objectManager.addObject(new Keycard(0,0,45,45))
 for(let i=0;i<1000;i++){
     let object = objectManager.objectTypes[Math.round(Math.random()*(objectManager.objectTypes.length-1))]
-    objectManager.addObject(new CollisionObject(100,0,45,45,object))
+    objectManager.addObject(new CollisionObject(0,0,45,45,object))
 }
 
 objectManager.positionObjects(biomeManager)
 
 renderManager.createObject("objects")
+
+renderManager.createState("objects","mainframe",true,8)
+renderManager.addImages("assets/textures/objects/mainframe/working","objects","mainframe",8)
+renderManager.createState("objects","mainframeDead",false)
+renderManager.addImage("assets/textures/objects/mainframe/dead/mainframe.png","objects","mainframeDead")
+renderManager.createState("objects","keycard",false)
+renderManager.addImage("assets/textures/objects/keycard/keycard.png","objects","keycard")
+
 renderManager.createState("objects","bamboo",false)
 renderManager.addImage("assets/textures/biome/bamboo.png","objects","bamboo")
 

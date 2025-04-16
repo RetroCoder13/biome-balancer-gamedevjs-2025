@@ -3,6 +3,7 @@ class ObjectManager{
         this.objects = []
         // this.objectTypes = ["tree","palm tree","log","iceberg","bamboo"]
         this.objectTypes = ["bamboo"]
+        this.keyCardFound = false
     }
 
     addObject(object){
@@ -33,24 +34,32 @@ class ObjectManager{
         player.disable = [false,false,false,false]
         for(let i=0;i<this.objects.length;i++){
             if((player.y + player.h >= this.objects[i].y) && (player.y <= this.objects[i].y + this.objects[i].h) && (player.x + player.w >= this.objects[i].x) && (player.x <= this.objects[i].x + this.objects[i].w)){
-                if(player.y > this.objects[i].y - player.h && player.y - player.h/2 < this.objects[i].y){
-                    player.targetY -= 1
-                    player.disable[1] = true
-                }
-                if(player.y < this.objects[i].y + this.objects[i].h && player.y + player.h/2 > this.objects[i].y){
-                    player.targetY += 1
-                    player.disable[0] = true
-                }
-                if(player.x > this.objects[i].x - player.w && player.x - player.w/2 < this.objects[i].x){
-                    player.targetX -= 1
-                    player.disable[3] = true
-                }
-                if(player.x < this.objects[i].x + this.objects[i].w && player.x + player.w/2 > this.objects[i].x){
-                    player.targetX += 1
-                    player.disable[2] = true
+                if(this.objects[i] instanceof Keycard){
+                    this.objects[i].found = true
+                    this.keyCardFound = true
+                } else if(this.objects[i] instanceof Mainframe && this.keyCardFound){
+                    this.objects[i].active = false
+                } else {
+                    if(player.y > this.objects[i].y - player.h && player.y - player.h/2 < this.objects[i].y){
+                        player.targetY -= 1
+                        player.disable[1] = true
+                    }
+                    if(player.y < this.objects[i].y + this.objects[i].h && player.y + player.h/2 > this.objects[i].y){
+                        player.targetY += 1
+                        player.disable[0] = true
+                    }
+                    if(player.x > this.objects[i].x - player.w && player.x - player.w/2 < this.objects[i].x){
+                        player.targetX -= 1
+                        player.disable[3] = true
+                    }
+                    if(player.x < this.objects[i].x + this.objects[i].w && player.x + player.w/2 > this.objects[i].x){
+                        player.targetX += 1
+                        player.disable[2] = true
+                    }
                 }
             }
-            renderManager.render("objects",this.objects[i].type,this.objects[i].x,this.objects[i].y,this.objects[i].w,this.objects[i].h)
+            this.objects[i].update()
+            // renderManager.render("objects",this.objects[i].type,this.objects[i].x,this.objects[i].y,this.objects[i].w,this.objects[i].h)
         }
     }
 }
