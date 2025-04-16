@@ -21,6 +21,7 @@ var cameraManager = new CameraManager(player.x,player.y,mapSize[0],mapSize[1])
 var inputManager = new InputManager(cameraManager)
 var animalManager = new AnimalManager()
 var biomeManager = new BiomeManager(mapSize[0],mapSize[1],50,player)
+var objectManager = new ObjectManager()
 biomeManager.generateBiomes()
 
 renderManager.loadFont("assets/textures/font")
@@ -99,6 +100,17 @@ renderManager.addImages("assets/textures/animals/rabbit/idle","rabbit","idle",28
 renderManager.createObject("panda")
 renderManager.createState("panda","idle",true,39)
 renderManager.addImages("assets/textures/animals/panda/idle","panda","idle",39)
+
+// for(let i=0;i<1000;i++){
+    let object = objectManager.objectTypes[Math.round(Math.random()*(objectManager.objectTypes.length-1))]
+    objectManager.addObject(new CollisionObject(100,0,50,50,object))
+// }
+
+// objectManager.positionObjects(biomeManager)
+
+renderManager.createObject("objects")
+renderManager.createState("objects","bamboo",false)
+renderManager.addImage("assets/textures/biome/bamboo.png","objects","bamboo")
 
 audioManager.createGroup("music")
 audioManager.createState("music","music")
