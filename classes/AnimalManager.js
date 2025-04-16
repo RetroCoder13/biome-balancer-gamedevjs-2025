@@ -5,6 +5,7 @@ class AnimalManager{
         this.canDrop = false
         // this.animalTypes = ["rabbit","fox","deer","desert fox","camel","desert mouse","panda","monkey","tiger","fish","turtle","crab","arctic fox","polar bear","reindeer"]
         this.animalTypes = ["rabbit","panda","fish"]
+        this.foundAnimals = []
     }
 
     addAnimal(animal){
@@ -78,6 +79,9 @@ class AnimalManager{
                     if(inputManager.getKey("e")){
                         this.animals[i].held = true
                         player.holdingAnimal = true
+                        if(!this.foundAnimals.includes(this.animals[i].type)){
+                            this.foundAnimals.push(this.animals[i].type)
+                        }
                     } else {
                         this.canPickup = true
                     }
