@@ -8,24 +8,25 @@ class Player{
         this.targetY = y
         this.speed = speed
         this.holdingAnimal = false
+        this.disable = [false,false,false,false]
     }
 
     update(renderManager,inputManager,biomeManager){
         let movement = [0,0]
         let move = false
-        if(inputManager.getKey("w")){
+        if(inputManager.getKey("w") && !this.disable[0]){
             movement[1] -= 1
             move = true
         }
-        if(inputManager.getKey("s")){
+        if(inputManager.getKey("s") && !this.disable[1]){
             movement[1] += 1
             move = true
         }
-        if(inputManager.getKey("a")){
+        if(inputManager.getKey("a") && !this.disable[2]){
             movement[0] -= 1
             move = true
         }
-        if(inputManager.getKey("d")){
+        if(inputManager.getKey("d") && !this.disable[3]){
             movement[0] += 1
             move = true
         }
