@@ -2,7 +2,7 @@ class ObjectManager{
     constructor(){
         this.objects = []
         // this.objectTypes = ["tree","palm tree","log","iceberg","bamboo"]
-        this.objectTypes = ["bamboo"]
+        this.objectTypes = ["log","bamboo"]
         this.keyCardFound = false
     }
 

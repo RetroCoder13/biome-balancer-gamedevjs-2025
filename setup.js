@@ -113,7 +113,7 @@ renderManager.addImages("assets/textures/animals/fish/swim","fish","swim",16)
 
 objectManager.addObject(new Mainframe(0,0,45,45))
 objectManager.addObject(new Keycard(0,0,45,45))
-for(let i=0;i<1000;i++){
+for(let i=0;i<1000/5*2;i++){
     let object = objectManager.objectTypes[Math.round(Math.random()*(objectManager.objectTypes.length-1))]
     objectManager.addObject(new CollisionObject(0,0,45,45,object))
 }
@@ -131,6 +131,8 @@ renderManager.addImage("assets/textures/objects/keycard/keycard.png","objects","
 
 renderManager.createState("objects","bamboo",false)
 renderManager.addImage("assets/textures/biome/bamboo.png","objects","bamboo")
+renderManager.createState("objects","log",false)
+renderManager.addImage("assets/textures/biome/log.png","objects","log")
 
 audioManager.createGroup("music")
 audioManager.createState("music","music")
