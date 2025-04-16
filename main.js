@@ -10,9 +10,9 @@ function update(){
     if(!mapUI.active && !compendiumUI.active){
         renderManager.update()
         biomeManager.update(renderManager)
+        objectManager.update(renderManager,player)
         player.update(renderManager,inputManager,biomeManager)
         animalManager.update(renderManager,inputManager,player)
-        objectManager.update(renderManager,player)
         hud.update(renderManager,cameraManager,animalManager)
     }
     cameraManager.update(player)
