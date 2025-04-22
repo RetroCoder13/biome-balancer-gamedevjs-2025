@@ -13,20 +13,29 @@ class ObjectManager{
 
     positionObjects(biomeManager){
         for(let i=0;i<this.objects.length;i++){
-            let point = []
-            point = [biomeManager.x+Math.round(Math.random()*(biomeManager.width-biomeManager.size*2)/biomeManager.size)*biomeManager.size, biomeManager.y+Math.round(Math.random()*(biomeManager.height-biomeManager.size*2)/biomeManager.size)*biomeManager.size]
-            this.objects[i].x = point[0]
-            this.objects[i].y = point[1]
-            let biome = biomeManager.checkAnimalBiome(this.objects[i])
-            while((biome != "forest" && this.objects[i].type == "tree")
-                || (biome != "desert" && this.objects[i].type == "palm tree")
-                || (biome != "ocean" && this.objects[i].type == "log")
-                || (biome != "tundra" && this.objects[i].type == "iceberg")
-                || (biome != "jungle" && this.objects[i].type == "bamboo")){
+            if(this.objects[i].type != "iceberg top" && this.objects[i].type != "iceberg middle" && this.objects[i].type != "iceberg bottom"){
+                let point = []
                 point = [biomeManager.x+Math.round(Math.random()*(biomeManager.width-biomeManager.size*2)/biomeManager.size)*biomeManager.size, biomeManager.y+Math.round(Math.random()*(biomeManager.height-biomeManager.size*2)/biomeManager.size)*biomeManager.size]
                 this.objects[i].x = point[0]
                 this.objects[i].y = point[1]
-                biome = biomeManager.checkAnimalBiome(this.objects[i])
+                let biome = biomeManager.checkAnimalBiome(this.objects[i])
+                while((biome != "forest" && this.objects[i].type == "tree")
+                    || (biome != "desert" && this.objects[i].type == "palm tree")
+                    || (biome != "ocean" && this.objects[i].type == "log")
+                    || (biome != "tundra" && this.objects[i].type == "iceberg")
+                    || (biome != "jungle" && this.objects[i].type == "bamboo")){
+                    point = [biomeManager.x+Math.round(Math.random()*(biomeManager.width-biomeManager.size*2)/biomeManager.size)*biomeManager.size, biomeManager.y+Math.round(Math.random()*(biomeManager.height-biomeManager.size*2)/biomeManager.size)*biomeManager.size]
+                    this.objects[i].x = point[0]
+                    this.objects[i].y = point[1]
+                    biome = biomeManager.checkAnimalBiome(this.objects[i])
+                }
+                if(this.objects[i].type == "iceberg"){
+                    this.objects.splice(i,1)
+                    i--
+                    this.objects.push(new CollisionObject(point[0]+28,point[1],34,30,"iceberg top"))
+                    this.objects.push(new CollisionObject(point[0]+11,point[1]+30,68,30,"iceberg middle"))
+                    this.objects.push(new CollisionObject(point[0],point[1]+60,90,30,"iceberg bottom"))
+                }
             }
         }
     }
