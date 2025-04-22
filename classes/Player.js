@@ -4,6 +4,8 @@ class Player{
         this.y = y
         this.w = w
         this.h = h
+        this.prevX = x
+        this.prevY = y
         this.targetX = x
         this.targetY = y
         this.speed = speed
@@ -12,6 +14,8 @@ class Player{
     }
 
     update(renderManager,inputManager,biomeManager){
+        this.prevX = this.x
+        this.prevY = this.y
         let movement = [0,0]
         let move = false
         if(inputManager.getKey("w") && !this.disable[0]){

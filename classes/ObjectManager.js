@@ -34,6 +34,32 @@ class ObjectManager{
     update(renderManager,player){
         player.disable = [false,false,false,false]
         for(let i=0;i<this.objects.length;i++){
+            // if((player.y + player.h >= this.objects[i].y) && (player.y <= this.objects[i].y + this.objects[i].h) && (player.x + player.w >= this.objects[i].x) && (player.x <= this.objects[i].x + this.objects[i].w)){
+            //     if(this.objects[i] instanceof Keycard){
+            //         this.objects[i].found = true
+            //         this.keyCardFound = true
+            //     } else if(this.objects[i] instanceof Mainframe && this.keyCardFound){
+            //         this.objects[i].active = false
+            //         this.mainframeActive = false
+            //     } else {
+            //         if(player.y > this.objects[i].y - player.h && player.y - player.h/2 < this.objects[i].y){
+            //             player.targetY -= 1
+            //             player.disable[1] = true
+            //         }
+            //         if(player.y < this.objects[i].y + this.objects[i].h && player.y + player.h/2 > this.objects[i].y){
+            //             player.targetY += 1
+            //             player.disable[0] = true
+            //         }
+            //         if(player.x > this.objects[i].x - player.w && player.x - player.w/2 < this.objects[i].x){
+            //             player.targetX -= 1
+            //             player.disable[3] = true
+            //         }
+            //         if(player.x < this.objects[i].x + this.objects[i].w && player.x + player.w/2 > this.objects[i].x){
+            //             player.targetX += 1
+            //             player.disable[2] = true
+            //         }
+            //     }
+            // }
             if((player.y + player.h >= this.objects[i].y) && (player.y <= this.objects[i].y + this.objects[i].h) && (player.x + player.w >= this.objects[i].x) && (player.x <= this.objects[i].x + this.objects[i].w)){
                 if(this.objects[i] instanceof Keycard){
                     this.objects[i].found = true
@@ -42,21 +68,21 @@ class ObjectManager{
                     this.objects[i].active = false
                     this.mainframeActive = false
                 } else {
-                    if(player.y > this.objects[i].y - player.h && player.y - player.h/2 < this.objects[i].y){
-                        player.targetY -= 1
+                    if(player.prevY <= this.objects[i].y - player.h){
                         player.disable[1] = true
+                        player.y = this.objects[i].y - player.h
                     }
-                    if(player.y < this.objects[i].y + this.objects[i].h && player.y + player.h/2 > this.objects[i].y){
-                        player.targetY += 1
+                    if(player.prevY >= this.objects[i].y + this.objects[i].h){
                         player.disable[0] = true
+                        player.y = this.objects[i].y + this.objects[i].h
                     }
-                    if(player.x > this.objects[i].x - player.w && player.x - player.w/2 < this.objects[i].x){
-                        player.targetX -= 1
+                    if(player.prevX <= this.objects[i].x - player.w){
                         player.disable[3] = true
+                        player.x = this.objects[i].x - player.w - 1
                     }
-                    if(player.x < this.objects[i].x + this.objects[i].w && player.x + player.w/2 > this.objects[i].x){
-                        player.targetX += 1
+                    if(player.prevX >= this.objects[i].x + this.objects[i].w){
                         player.disable[2] = true
+                        player.x = this.objects[i].x + this.objects[i].w + 1
                     }
                 }
             }
