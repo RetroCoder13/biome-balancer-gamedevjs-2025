@@ -129,7 +129,11 @@ class CompendiumUI extends UI{
                     ctx.fillStyle = "#333333"
                 }
                 ctx.fillRect(x,y,size,size)
-                renderManager.render(animalManager.animalTypes[i],"idle",x+10,y+10,size-20,size-20)
+                if(animalManager.animalTypes[i] == "fish"){
+                    renderManager.render(animalManager.animalTypes[i],"idle",x+10,y+20,size-20,(size-20)/2)
+                } else {
+                    renderManager.render(animalManager.animalTypes[i],"idle",x+10,y+10,size-20,size-20)
+                }
             } else {
                 ctx.fillRect(x,y,size,size)
                 renderManager.render("icons","question",x+10,y+10,size-20,size-20)
