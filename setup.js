@@ -111,6 +111,24 @@ renderManager.addImages("assets/textures/animals/fish/idle","fish","idle",8)
 renderManager.createState("fish","swim",true,16)
 renderManager.addImages("assets/textures/animals/fish/swim","fish","swim",16)
 
+renderManager.createObject("turtle")
+renderManager.createState("turtle","idle",true,44)
+renderManager.addImages("assets/textures/animals/turtle/idle","turtle","idle",44)
+renderManager.createState("turtle","swim",true,12)
+renderManager.addImages("assets/textures/animals/turtle/swim","turtle","swim",12)
+
+renderManager.createObject("fox")
+renderManager.createState("fox","idle",true,34)
+renderManager.addImages("assets/textures/animals/fox/idle","fox","idle",34)
+
+renderManager.createObject("desert mouse")
+renderManager.createState("desert mouse","idle",true,36)
+renderManager.addImages("assets/textures/animals/desert mouse/idle","desert mouse","idle",36)
+
+renderManager.createObject("crab")
+renderManager.createState("crab","idle",true,32)
+renderManager.addImages("assets/textures/animals/crab/idle","crab","idle",32)
+
 objectManager.addObject(new Mainframe(0,0,45,45))
 objectManager.addObject(new Keycard(0,0,45,45))
 for(let i=0;i<1000/5*2;i++){

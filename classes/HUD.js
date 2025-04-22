@@ -11,15 +11,16 @@ class HUD{
         this.y = cameraManager.y-cameraManager.offsetY-offset[1]
     }
 
-    update(renderManager,cameraManager,animalManager,objectManager){
+    update(renderManager,cameraManager,animalManager,objectManager,biomeManager,player){
         this.updatePosition(cameraManager)
-        this.render(renderManager,animalManager,objectManager)
+        this.render(renderManager,animalManager,objectManager,biomeManager,player)
     }
 
-    render(renderManager,animalManager,objectManager){
+    render(renderManager,animalManager,objectManager,biomeManager,player){
         let happyAnimals = animalManager.getHappyAnimals()
         ctx.fillStyle = "#000000"
-        ctx.fillRect(this.x+10,this.y+10,370,45)
+        ctx.fillRect(this.x+10,this.y+10,370,70)
+        renderManager.renderText(`biome: ${biomeManager.checkPlayerBiome(player)}`,this.x+25,this.y+50,15)
         renderManager.renderText(`saved animals: ${happyAnimals.count}/${happyAnimals.total}`,this.x+25,this.y+25,15)
         renderManager.render("icons","keym",this.x+880,this.y+440,50,50)
         renderManager.render("icons","map",this.x+940,this.y+440,50,50)
