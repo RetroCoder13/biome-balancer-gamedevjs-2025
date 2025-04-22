@@ -172,3 +172,9 @@ var mapUI = new MapUI(cameraManager,1000,500,"m")
 var compendiumUI = new CompendiumUI(cameraManager,1000,500,"c")
 
 var hud = new HUD(cameraManager,1000,500)
+
+var menu = new Menu(offset[0],offset[1],1000,500)
+
+renderManager.createObject("menu")
+renderManager.createState("menu","play",false)
+renderManager.addImage("assets/textures/icons/menu/play.png","menu","play")

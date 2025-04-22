@@ -1,21 +1,25 @@
 function update(){
     ctx.clearRect(cameraManager.x-cameraManager.offsetX-offset[0],cameraManager.y-cameraManager.offsetY-offset[1],canvas.width,canvas.height)
 
-    if(!compendiumUI.active){
-        mapUI.update(renderManager,inputManager,cameraManager,player,biomeManager,animalManager)
+    if(menu.active){
+        menu.update(inputManager,renderManager)
+    } else {
+        if(!compendiumUI.active){
+            mapUI.update(renderManager,inputManager,cameraManager,player,biomeManager,animalManager)
+        }
+        if(!mapUI.active){
+            compendiumUI.update(renderManager,inputManager,cameraManager,animalManager)
+        }
+        if(!mapUI.active && !compendiumUI.active){
+            renderManager.update()
+            biomeManager.update(renderManager)
+            objectManager.update(renderManager,player)
+            player.update(renderManager,inputManager,biomeManager)
+            animalManager.update(renderManager,inputManager,player)
+            hud.update(renderManager,cameraManager,animalManager,objectManager,biomeManager,player)
+        }
+        cameraManager.update(player)
     }
-    if(!mapUI.active){
-        compendiumUI.update(renderManager,inputManager,cameraManager,animalManager)
-    }
-    if(!mapUI.active && !compendiumUI.active){
-        renderManager.update()
-        biomeManager.update(renderManager)
-        objectManager.update(renderManager,player)
-        player.update(renderManager,inputManager,biomeManager)
-        animalManager.update(renderManager,inputManager,player)
-        hud.update(renderManager,cameraManager,animalManager,objectManager,biomeManager,player)
-    }
-    cameraManager.update(player)
 
     requestAnimationFrame(update)
 }
