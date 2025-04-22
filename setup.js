@@ -129,8 +129,6 @@ renderManager.createObject("crab")
 renderManager.createState("crab","idle",true,32)
 renderManager.addImages("assets/textures/animals/crab/idle","crab","idle",32)
 
-objectManager.addObject(new Mainframe(0,0,45,45))
-objectManager.addObject(new Keycard(0,0,45,45))
 for(let i=0;i<1000/5*2;i++){
     let object = objectManager.objectTypes[Math.round(Math.random()*(objectManager.objectTypes.length-1))]
     if(object == "iceberg"){
@@ -139,6 +137,9 @@ for(let i=0;i<1000/5*2;i++){
         objectManager.addObject(new CollisionObject(0,0,45,45,object))
     }
 }
+
+objectManager.addObject(new Mainframe(0,0,45,45))
+objectManager.addObject(new Keycard(0,0,45,45))
 
 objectManager.positionObjects(biomeManager)
 
