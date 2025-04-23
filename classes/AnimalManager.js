@@ -56,7 +56,7 @@ class AnimalManager{
         }
     }
 
-    update(renderManager,inputManager,player){
+    update(renderManager,inputManager,player,endMenu){
         this.canDrop = false
         this.canPickup = false
         if(true){
@@ -88,8 +88,16 @@ class AnimalManager{
                 }
             }
         }
+        let count = 0
         for(let i=0;i<this.animals.length;i++){
+            if(this.animals[i].happy){
+                count++
+            }
             this.animals[i].update(renderManager,player)
+        }
+        if(count == this.animals.length){
+            endMenu.setOffset(player.targetX,player.targetY)
+            endMenu.active = true
         }
     }
 }

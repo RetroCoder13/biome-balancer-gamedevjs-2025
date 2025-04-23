@@ -1,7 +1,9 @@
 function update(){
     ctx.clearRect(cameraManager.x-cameraManager.offsetX-offset[0],cameraManager.y-cameraManager.offsetY-offset[1],canvas.width,canvas.height)
 
-    if(menu.active){
+    if(endMenu.active){
+        endMenu.update(inputManager,renderManager)
+    } else if(menu.active){
         menu.update(inputManager,renderManager)
     } else {
         if(!compendiumUI.active){
@@ -15,7 +17,7 @@ function update(){
             biomeManager.update(renderManager)
             objectManager.update(renderManager,player)
             player.update(renderManager,inputManager,biomeManager)
-            animalManager.update(renderManager,inputManager,player)
+            animalManager.update(renderManager,inputManager,player,endMenu)
             hud.update(renderManager,cameraManager,animalManager,objectManager,biomeManager,player)
         }
         cameraManager.update(player)

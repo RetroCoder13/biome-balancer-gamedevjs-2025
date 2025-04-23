@@ -19,3 +19,10 @@ class Menu{
         }
     }
 }
+
+class EndMenu extends Menu{
+    setOffset(offsetX,offsetY){
+        this.offsetX = offsetX - this.w/2
+        this.offsetY = offsetY - this.h/2
+    }
+}

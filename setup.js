@@ -175,5 +175,8 @@ var hud = new HUD(cameraManager,1000,500)
 
 var menu = new Menu(offset[0],offset[1],1000,500)
 
+var endMenu = new EndMenu(offset[0],offset[1],1000,500)
+endMenu.active = false
+
 renderManager.createState("menu","play",false)
 renderManager.addImage("assets/textures/icons/menu/play.png","menu","play")

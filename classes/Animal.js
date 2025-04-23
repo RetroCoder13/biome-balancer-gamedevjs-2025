@@ -47,7 +47,7 @@ class Animal{
         }
 
         let biome = biomeManager.checkAnimalBiome(this)
-        if((biome == "forest" && this.type == "rabbit")
+        if(((biome == "forest" && this.type == "rabbit")
             || (biome == "forest" && this.type == "fox")
             || (biome == "forest" && this.type == "deer")
             || (biome == "desert" && this.type == "desert fox")
@@ -61,7 +61,8 @@ class Animal{
             || (biome == "ocean" && this.type == "crab")
             || (biome == "tundra" && this.type == "arctic fox")
             || (biome == "tundra" && this.type == "polar bear")
-            || (biome == "tundra" && this.type == "reindeer")){
+            || (biome == "tundra" && this.type == "reindeer"))
+            && (!this.held)){
                 this.happy = true
                 renderManager.render("animal","home",this.x,this.y,this.w,this.h)
         } else {
