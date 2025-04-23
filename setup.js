@@ -22,161 +22,185 @@ var inputManager = new InputManager(cameraManager,offset[0],offset[1])
 var animalManager = new AnimalManager()
 var biomeManager = new BiomeManager(mapSize[0],mapSize[1],50,player)
 var objectManager = new ObjectManager()
-biomeManager.generateBiomes()
-
-renderManager.loadFont("assets/textures/font")
-
-renderManager.createObject("icons")
-renderManager.createState("icons","map",false)
-renderManager.addImage("assets/textures/icons/map.png","icons","map")
-renderManager.createState("icons","compendium",false)
-renderManager.addImage("assets/textures/icons/compendium.png","icons","compendium")
-renderManager.createState("icons","keyesc",false)
-renderManager.addImage("assets/textures/icons/keys/esc.png","icons","keyesc")
-renderManager.createState("icons","keyc",false)
-renderManager.addImage("assets/textures/icons/keys/c.png","icons","keyc")
-renderManager.createState("icons","keye",false)
-renderManager.addImage("assets/textures/icons/keys/e.png","icons","keye")
-renderManager.createState("icons","keym",false)
-renderManager.addImage("assets/textures/icons/keys/m.png","icons","keym")
-renderManager.createState("icons","keyr",false)
-renderManager.addImage("assets/textures/icons/keys/r.png","icons","keyr")
-renderManager.createState("icons","question",false)
-renderManager.addImage("assets/textures/icons/question.png","icons","question")
-
-renderManager.createObject("menu")
-renderManager.createState("menu","map",false)
-renderManager.addImage("assets/textures/menu/map.png","menu","map")
-
-renderManager.createObject("biome")
-renderManager.createState("biome","forest",false)
-renderManager.addImage("assets/textures/biome/forest.png","biome","forest")
-renderManager.createState("biome","desert",false)
-renderManager.addImage("assets/textures/biome/desert.png","biome","desert")
-renderManager.createState("biome","tundra",false)
-renderManager.addImage("assets/textures/biome/tundra.png","biome","tundra")
-renderManager.createState("biome","jungle",false)
-renderManager.addImage("assets/textures/biome/jungle.png","biome","jungle")
-renderManager.createState("biome","ocean",false)
-renderManager.addImage("assets/textures/biome/ocean.png","biome","ocean")
-
-renderManager.createObject("player")
-renderManager.createState("player","idle",true,18)
-renderManager.addImages("assets/textures/player/idle","player","idle",18)
-
-renderManager.createState("player","walk",true,4)
-renderManager.addImages("assets/textures/player/walk","player","walk",4)
-
-renderManager.createState("player","walkAnimal",true,4)
-renderManager.addImages("assets/textures/player/walk/animal","player","walkAnimal",4)
-
-renderManager.createState("player","idleAnimal",true,18)
-renderManager.addImages("assets/textures/player/idle/animal","player","idleAnimal",18)
-
-renderManager.createState("player","swim",true,16)
-renderManager.addImages("assets/textures/player/swim","player","swim",16)
-renderManager.createState("player","idleSwim",true,30)
-renderManager.addImages("assets/textures/player/swim/idle","player","idleSwim",30)
-renderManager.createState("player","swimAnimal",true,8)
-renderManager.addImages("assets/textures/player/swim/animal","player","swimAnimal",8)
-
-for(let i=0;i<15;i++){
-    let animal = animalManager.animalTypes[Math.round(Math.random()*(animalManager.animalTypes.length-1))]
-    if(animal == "panda"){
-        animalManager.addAnimal(new Animal(0,0,100,100,1,animal))
-    } else if(animal == "fish"){
-        animalManager.addAnimal(new Animal(0,0,50,25,1,animal))
-    } else {
-        animalManager.addAnimal(new Animal(0,0,50,50,1,animal))
-    }
-}
-
-animalManager.positionAnimals(biomeManager)
-
-renderManager.createObject("animal")
-renderManager.createState("animal","home",true,10)
-renderManager.addImages("assets/textures/animals/home","animal","home",10)
-
-renderManager.createObject("rabbit")
-renderManager.createState("rabbit","idle",true,28)
-renderManager.addImages("assets/textures/animals/rabbit/idle","rabbit","idle",28)
-
-renderManager.createObject("panda")
-renderManager.createState("panda","idle",true,39)
-renderManager.addImages("assets/textures/animals/panda/idle","panda","idle",39)
-
-renderManager.createObject("fish")
-renderManager.createState("fish","idle",true,8)
-renderManager.addImages("assets/textures/animals/fish/idle","fish","idle",8)
-renderManager.createState("fish","swim",true,16)
-renderManager.addImages("assets/textures/animals/fish/swim","fish","swim",16)
-
-renderManager.createObject("turtle")
-renderManager.createState("turtle","idle",true,44)
-renderManager.addImages("assets/textures/animals/turtle/idle","turtle","idle",44)
-renderManager.createState("turtle","swim",true,12)
-renderManager.addImages("assets/textures/animals/turtle/swim","turtle","swim",12)
-
-renderManager.createObject("fox")
-renderManager.createState("fox","idle",true,34)
-renderManager.addImages("assets/textures/animals/fox/idle","fox","idle",34)
-
-renderManager.createObject("desert mouse")
-renderManager.createState("desert mouse","idle",true,36)
-renderManager.addImages("assets/textures/animals/desert mouse/idle","desert mouse","idle",36)
-
-renderManager.createObject("crab")
-renderManager.createState("crab","idle",true,32)
-renderManager.addImages("assets/textures/animals/crab/idle","crab","idle",32)
-
-for(let i=0;i<1000/5*2;i++){
-    let object = objectManager.objectTypes[Math.round(Math.random()*(objectManager.objectTypes.length-1))]
-    if(object == "iceberg"){
-        objectManager.addObject(new CollisionObject(0,0,90,90,object))
-    } else {
-        objectManager.addObject(new CollisionObject(0,0,45,45,object))
-    }
-}
-
-objectManager.addObject(new Mainframe(0,0,45,45))
-objectManager.addObject(new Keycard(0,0,45,45))
-
-objectManager.positionObjects(biomeManager)
-
-renderManager.createObject("objects")
-
-renderManager.createState("objects","mainframe",true,8)
-renderManager.addImages("assets/textures/objects/mainframe/working","objects","mainframe",8)
-renderManager.createState("objects","mainframeDead",false)
-renderManager.addImage("assets/textures/objects/mainframe/dead/mainframe.png","objects","mainframeDead")
-renderManager.createState("objects","keycard",false)
-renderManager.addImage("assets/textures/objects/keycard/keycard.png","objects","keycard")
-
-renderManager.createState("objects","bamboo",false)
-renderManager.addImage("assets/textures/biome/bamboo.png","objects","bamboo")
-renderManager.createState("objects","log",false)
-renderManager.addImage("assets/textures/biome/log.png","objects","log")
-renderManager.createState("objects","iceberg bottom",false)
-renderManager.addImage("assets/textures/biome/iceberg/bottom.png","objects","iceberg bottom")
-renderManager.createState("objects","iceberg middle",false)
-renderManager.addImage("assets/textures/biome/iceberg/middle.png","objects","iceberg middle")
-renderManager.createState("objects","iceberg top",false)
-renderManager.addImage("assets/textures/biome/iceberg/top.png","objects","iceberg top")
-
-audioManager.createGroup("music")
-audioManager.createState("music","music")
-audioManager.addSound("assets/sounds/music/music.wav","music","music",true)
-audioManager.play("music","music")
 
 var mapUI = new MapUI(cameraManager,1000,500,"m")
 var compendiumUI = new CompendiumUI(cameraManager,1000,500,"c")
-
 var hud = new HUD(cameraManager,1000,500)
-
 var menu = new Menu(offset[0],offset[1],1000,500)
-
 var endMenu = new EndMenu(offset[0],offset[1],1000,500)
-endMenu.active = false
 
-renderManager.createState("menu","play",false)
-renderManager.addImage("assets/textures/icons/menu/play.png","menu","play")
+function setup(){
+    ctx.resetTransform()
+    ctx.scale(scale,scale)
+    let offset = [475,225]
+    ctx.translate(offset[0],offset[1])
+    player = new Player(0,0,50,50,2)
+    renderManager = new RenderManager()
+    audioManager = new AudioManager()
+    cameraManager = new CameraManager(player.x,player.y,mapSize[0],mapSize[1],offset[0],offset[1])
+    inputManager = new InputManager(cameraManager,offset[0],offset[1])
+    animalManager = new AnimalManager()
+    biomeManager = new BiomeManager(mapSize[0],mapSize[1],50,player)
+    objectManager = new ObjectManager()
+    
+    biomeManager.generateBiomes()
+
+    renderManager.loadFont("assets/textures/font")
+
+    renderManager.createObject("icons")
+    renderManager.createState("icons","map",false)
+    renderManager.addImage("assets/textures/icons/map.png","icons","map")
+    renderManager.createState("icons","compendium",false)
+    renderManager.addImage("assets/textures/icons/compendium.png","icons","compendium")
+    renderManager.createState("icons","keyesc",false)
+    renderManager.addImage("assets/textures/icons/keys/esc.png","icons","keyesc")
+    renderManager.createState("icons","keyc",false)
+    renderManager.addImage("assets/textures/icons/keys/c.png","icons","keyc")
+    renderManager.createState("icons","keye",false)
+    renderManager.addImage("assets/textures/icons/keys/e.png","icons","keye")
+    renderManager.createState("icons","keym",false)
+    renderManager.addImage("assets/textures/icons/keys/m.png","icons","keym")
+    renderManager.createState("icons","keyr",false)
+    renderManager.addImage("assets/textures/icons/keys/r.png","icons","keyr")
+    renderManager.createState("icons","question",false)
+    renderManager.addImage("assets/textures/icons/question.png","icons","question")
+
+    renderManager.createObject("menu")
+    renderManager.createState("menu","map",false)
+    renderManager.addImage("assets/textures/menu/map.png","menu","map")
+
+    renderManager.createObject("biome")
+    renderManager.createState("biome","forest",false)
+    renderManager.addImage("assets/textures/biome/forest.png","biome","forest")
+    renderManager.createState("biome","desert",false)
+    renderManager.addImage("assets/textures/biome/desert.png","biome","desert")
+    renderManager.createState("biome","tundra",false)
+    renderManager.addImage("assets/textures/biome/tundra.png","biome","tundra")
+    renderManager.createState("biome","jungle",false)
+    renderManager.addImage("assets/textures/biome/jungle.png","biome","jungle")
+    renderManager.createState("biome","ocean",false)
+    renderManager.addImage("assets/textures/biome/ocean.png","biome","ocean")
+
+    renderManager.createObject("player")
+    renderManager.createState("player","idle",true,18)
+    renderManager.addImages("assets/textures/player/idle","player","idle",18)
+
+    renderManager.createState("player","walk",true,4)
+    renderManager.addImages("assets/textures/player/walk","player","walk",4)
+
+    renderManager.createState("player","walkAnimal",true,4)
+    renderManager.addImages("assets/textures/player/walk/animal","player","walkAnimal",4)
+
+    renderManager.createState("player","idleAnimal",true,18)
+    renderManager.addImages("assets/textures/player/idle/animal","player","idleAnimal",18)
+
+    renderManager.createState("player","swim",true,16)
+    renderManager.addImages("assets/textures/player/swim","player","swim",16)
+    renderManager.createState("player","idleSwim",true,30)
+    renderManager.addImages("assets/textures/player/swim/idle","player","idleSwim",30)
+    renderManager.createState("player","swimAnimal",true,8)
+    renderManager.addImages("assets/textures/player/swim/animal","player","swimAnimal",8)
+
+    for(let i=0;i<15;i++){
+        let animal = animalManager.animalTypes[Math.round(Math.random()*(animalManager.animalTypes.length-1))]
+        if(animal == "panda"){
+            animalManager.addAnimal(new Animal(0,0,100,100,1,animal))
+        } else if(animal == "fish"){
+            animalManager.addAnimal(new Animal(0,0,50,25,1,animal))
+        } else {
+            animalManager.addAnimal(new Animal(0,0,50,50,1,animal))
+        }
+    }
+
+    animalManager.positionAnimals(biomeManager)
+
+    renderManager.createObject("animal")
+    renderManager.createState("animal","home",true,10)
+    renderManager.addImages("assets/textures/animals/home","animal","home",10)
+
+    renderManager.createObject("rabbit")
+    renderManager.createState("rabbit","idle",true,28)
+    renderManager.addImages("assets/textures/animals/rabbit/idle","rabbit","idle",28)
+
+    renderManager.createObject("panda")
+    renderManager.createState("panda","idle",true,39)
+    renderManager.addImages("assets/textures/animals/panda/idle","panda","idle",39)
+
+    renderManager.createObject("fish")
+    renderManager.createState("fish","idle",true,8)
+    renderManager.addImages("assets/textures/animals/fish/idle","fish","idle",8)
+    renderManager.createState("fish","swim",true,16)
+    renderManager.addImages("assets/textures/animals/fish/swim","fish","swim",16)
+
+    renderManager.createObject("turtle")
+    renderManager.createState("turtle","idle",true,44)
+    renderManager.addImages("assets/textures/animals/turtle/idle","turtle","idle",44)
+    renderManager.createState("turtle","swim",true,12)
+    renderManager.addImages("assets/textures/animals/turtle/swim","turtle","swim",12)
+
+    renderManager.createObject("fox")
+    renderManager.createState("fox","idle",true,34)
+    renderManager.addImages("assets/textures/animals/fox/idle","fox","idle",34)
+
+    renderManager.createObject("desert mouse")
+    renderManager.createState("desert mouse","idle",true,36)
+    renderManager.addImages("assets/textures/animals/desert mouse/idle","desert mouse","idle",36)
+
+    renderManager.createObject("crab")
+    renderManager.createState("crab","idle",true,32)
+    renderManager.addImages("assets/textures/animals/crab/idle","crab","idle",32)
+
+    for(let i=0;i<1000/5*2;i++){
+        let object = objectManager.objectTypes[Math.round(Math.random()*(objectManager.objectTypes.length-1))]
+        if(object == "iceberg"){
+            objectManager.addObject(new CollisionObject(0,0,90,90,object))
+        } else {
+            objectManager.addObject(new CollisionObject(0,0,45,45,object))
+        }
+    }
+
+    objectManager.addObject(new Mainframe(0,0,45,45))
+    objectManager.addObject(new Keycard(0,0,45,45))
+
+    objectManager.positionObjects(biomeManager)
+
+    renderManager.createObject("objects")
+
+    renderManager.createState("objects","mainframe",true,8)
+    renderManager.addImages("assets/textures/objects/mainframe/working","objects","mainframe",8)
+    renderManager.createState("objects","mainframeDead",false)
+    renderManager.addImage("assets/textures/objects/mainframe/dead/mainframe.png","objects","mainframeDead")
+    renderManager.createState("objects","keycard",false)
+    renderManager.addImage("assets/textures/objects/keycard/keycard.png","objects","keycard")
+
+    renderManager.createState("objects","bamboo",false)
+    renderManager.addImage("assets/textures/biome/bamboo.png","objects","bamboo")
+    renderManager.createState("objects","log",false)
+    renderManager.addImage("assets/textures/biome/log.png","objects","log")
+    renderManager.createState("objects","iceberg bottom",false)
+    renderManager.addImage("assets/textures/biome/iceberg/bottom.png","objects","iceberg bottom")
+    renderManager.createState("objects","iceberg middle",false)
+    renderManager.addImage("assets/textures/biome/iceberg/middle.png","objects","iceberg middle")
+    renderManager.createState("objects","iceberg top",false)
+    renderManager.addImage("assets/textures/biome/iceberg/top.png","objects","iceberg top")
+
+    audioManager.createGroup("music")
+    audioManager.createState("music","music")
+    audioManager.addSound("assets/sounds/music/music.wav","music","music",true)
+    audioManager.play("music","music")
+
+    mapUI = new MapUI(cameraManager,1000,500,"m")
+    compendiumUI = new CompendiumUI(cameraManager,1000,500,"c")
+
+    hud = new HUD(cameraManager,1000,500)
+
+    // menu = new Menu(offset[0],offset[1],1000,500)
+
+    endMenu = new EndMenu(offset[0],offset[1],1000,500)
+    endMenu.active = false
+
+    renderManager.createState("menu","play",false)
+    renderManager.addImage("assets/textures/icons/menu/play.png","menu","play")
+}
+
+setup()
