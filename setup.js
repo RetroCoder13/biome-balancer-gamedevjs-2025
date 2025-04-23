@@ -162,6 +162,10 @@ function setup(){
     renderManager.createState("polar bear","idle",true,20)
     renderManager.addImages("assets/textures/animals/polar bear/idle","polar bear","idle",20)
 
+    renderManager.createObject("snake")
+    renderManager.createState("snake","idle",true,33)
+    renderManager.addImages("assets/textures/animals/snake/idle","snake","idle",33)
+
     for(let i=0;i<1000/5*2;i++){
         let object = objectManager.objectTypes[Math.round(Math.random()*(objectManager.objectTypes.length-1))]
         if(object == "iceberg"){

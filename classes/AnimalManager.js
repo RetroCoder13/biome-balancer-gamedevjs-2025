@@ -4,7 +4,7 @@ class AnimalManager{
         this.canPickup = false
         this.canDrop = false
         // this.animalTypes = ["rabbit","fox","deer","fennec fox","camel","desert mouse","panda","monkey","snake","fish","turtle","crab","arctic fox","polar bear","reindeer"]
-        this.animalTypes = ["rabbit","fox","fennec fox","desert mouse","panda","fish","turtle","crab","arctic fox","polar bear"]
+        this.animalTypes = ["rabbit","fox","fennec fox","desert mouse","panda","snake","fish","turtle","crab","arctic fox","polar bear"]
         this.foundAnimals = []
     }
 
