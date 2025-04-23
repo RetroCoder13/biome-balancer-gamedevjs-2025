@@ -6,7 +6,7 @@ class InputManager{
         this.offsetY = offsetY
         var that = this
         addEventListener('mousedown',function(e){
-            that.mouse.pos = [e.offsetX + cameraManager.x - that.offsetX,e.offsetY + cameraManager.y - that.offsetY]
+            that.mouse.pos = [(e.offsetX/windowScale + cameraManager.x - that.offsetX),(e.offsetY/windowScale + cameraManager.y - that.offsetY)]
             that.mouse.click = true
         })
 

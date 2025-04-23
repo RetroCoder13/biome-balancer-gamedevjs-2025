@@ -1,7 +1,7 @@
 var canvas = document.querySelector('canvas')
 var ctx = canvas.getContext('2d')
 
-let scale = 2
+let scale = 3
 canvas.style.width = "1000px"
 canvas.style.height = "500px"
 canvas.width = 1000*scale

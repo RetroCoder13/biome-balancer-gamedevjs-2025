@@ -5,7 +5,7 @@ class Menu{
         this.offsetY = 0
         this.w = w
         this.h = h
-        this.gameName = "game name"
+        this.gameName = "biome balance"
     }
 
     update(inputManager,renderManager,cameraManager){
