@@ -150,14 +150,49 @@ class CompendiumUI extends UI{
         ctx.fillRect(this.x + offset[0] + 5*(size+10),this.y + offset[1], 450,300)
         renderManager.renderText(animal,this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 10,30)
         if(animal == "rabbit" || animal == "fox" || animal == "deer"){
+            if(animal == "rabbit"){
+                renderManager.renderText("",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 90,10)
+            } else if(animal == "fox"){
+                renderManager.renderText("",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 90,10)
+            } else if(animal == "deer"){
+                renderManager.renderText("",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 90,10)
+            }
             renderManager.renderText("biome: forest",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 50,20)
         } else if(animal == "desert fox" || animal == "camel" || animal == "desert mouse"){
+            if(animal == "desert fox"){
+                renderManager.renderText("",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 90,10)
+            } else if(animal == "camel"){
+                renderManager.renderText("",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 90,10)
+            } else if(animal == "desert mouse"){
+                renderManager.renderText("",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 90,10)
+            }
             renderManager.renderText("biome: desert",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 50,20)
         } else if(animal == "panda" || animal == "monkey" || animal == "tiger"){
+            if(animal == "panda"){
+                renderManager.renderText("",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 90,10)
+            } else if(animal == "monkey"){
+                renderManager.renderText("",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 90,10)
+            } else if(animal == "tiger"){
+                renderManager.renderText("",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 90,10)
+            }
             renderManager.renderText("biome: jungle",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 50,20)
         } else if(animal == "fish" || animal == "turtle" || animal == "crab"){
+            if(animal == "fish"){
+                renderManager.renderText("",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 90,10)
+            } else if(animal == "turtle"){
+                renderManager.renderText("",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 90,10)
+            } else if(animal == "crab"){
+                renderManager.renderText("",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 90,10)
+            }
             renderManager.renderText("biome: ocean",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 50,20)
         } else if(animal == "arctic fox" || animal == "polar bear" || animal == "reindeer"){
+            if(animal == "arctic fox"){
+                renderManager.renderText("",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 90,10)
+            } else if(animal == "polar bear"){
+                renderManager.renderText("",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 90,10)
+            } else if(animal == "reindeer"){
+                renderManager.renderText("",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 90,10)
+            }
             renderManager.renderText("biome: tundra",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 50,20)
         }
     }
