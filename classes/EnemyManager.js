@@ -59,24 +59,31 @@ class EnemyManager{
                         }
                     }
                 } else {
-                    if(this.enemies[i].x > objectManager.objects[0].x){
-                        this.enemies[i].targetX -= this.speed
-                    } else if(this.enemies[i].x < objectManager.objects[0].x){
-                        this.enemies[i].targetX += this.speed
-                    }
-                    if(this.enemies[i].y > objectManager.objects[0].y){
-                        this.enemies[i].targetY -= this.speed
-                    } else if(this.enemies[i].y < objectManager.objects[0].y){
-                        this.enemies[i].targetY += this.speed
-                    }
-                    animalManager.animals[this.enemies[i].targetAnimal].targetX = this.enemies[i].x - (animalManager.animals[this.enemies[i].targetAnimal].w - 50)/2
-                    animalManager.animals[this.enemies[i].targetAnimal].targetY = this.enemies[i].y - animalManager.animals[this.enemies[i].targetAnimal].h
-                    if(this.enemies[i].x + this.enemies[i].w > objectManager.objects[0].x
-                        && this.enemies[i].x < objectManager.objects[0].x + objectManager.objects[0].w
-                        && this.enemies[i].y + this.enemies[i].h > objectManager.objects[0].y
-                        && this.enemies[i].y < objectManager.objects[0].y + objectManager.objects[0].h){
-                            this.enemies[i].pointTarget = undefined
-                            this.enemies[i].targetAnimal = undefined
+                    if(animalManager.animals[this.enemies[i].targetAnimal].held){
+                        this.enemies[i].pointTarget = undefined
+                        this.enemies[i].targetAnimal = undefined
+                        this.enemies[i].randomDirection = [Math.round(Math.random()*2)-1,Math.round(Math.random()*2)-1]
+                    } else {
+                        if(this.enemies[i].x > objectManager.objects[0].x){
+                            this.enemies[i].targetX -= this.speed
+                        } else if(this.enemies[i].x < objectManager.objects[0].x){
+                            this.enemies[i].targetX += this.speed
+                        }
+                        if(this.enemies[i].y > objectManager.objects[0].y){
+                            this.enemies[i].targetY -= this.speed
+                        } else if(this.enemies[i].y < objectManager.objects[0].y){
+                            this.enemies[i].targetY += this.speed
+                        }
+                        animalManager.animals[this.enemies[i].targetAnimal].targetX = this.enemies[i].x - (animalManager.animals[this.enemies[i].targetAnimal].w - 50)/2
+                        animalManager.animals[this.enemies[i].targetAnimal].targetY = this.enemies[i].y - animalManager.animals[this.enemies[i].targetAnimal].h
+                        if(this.enemies[i].x + this.enemies[i].w > objectManager.objects[0].x
+                            && this.enemies[i].x < objectManager.objects[0].x + objectManager.objects[0].w
+                            && this.enemies[i].y + this.enemies[i].h > objectManager.objects[0].y
+                            && this.enemies[i].y < objectManager.objects[0].y + objectManager.objects[0].h){
+                                this.enemies[i].pointTarget = undefined
+                                this.enemies[i].targetAnimal = undefined
+                                this.enemies[i].randomDirection = [Math.round(Math.random()*2)-1,Math.round(Math.random()*2)-1]
+                        }
                     }
                 }
             }
