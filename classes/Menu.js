@@ -23,7 +23,6 @@ class Menu{
 }
 
 class EndMenu extends Menu{
-
     update(inputManager,renderManager,cameraManager){
         this.offsetX = cameraManager.x-cameraManager.offsetX-offset[0]
         this.offsetY = cameraManager.y-cameraManager.offsetY-offset[1]

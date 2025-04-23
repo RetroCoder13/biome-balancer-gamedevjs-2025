@@ -96,7 +96,6 @@ class AnimalManager{
             this.animals[i].update(renderManager,player)
         }
         if(count == this.animals.length){
-            endMenu.setOffset(player.targetX,player.targetY)
             endMenu.active = true
         }
     }
