@@ -23,30 +23,58 @@ class EnemyManager{
     update(renderManager,animalManager,objectManager,biomeManager){
         if(this.active){
             for(let i=0;i<this.enemies.length;i++){
-                let distance = 1000
-                let animal = null
-                for(let j=0;j<animalManager.animals.length;j++){
-                    if(Math.sqrt((this.enemies[i].x - animalManager.animals[j].x)**2 + (this.enemies[i].y - animalManager.animals[j].y)**2) < distance && animalManager.animals[j].happy){
-                        distance = Math.sqrt((this.enemies[i].x - animalManager.animals[j].x)**2 + (this.enemies[i].y - animalManager.animals[j].y)**2)
-                        animal = j
+                if(this.enemies[i].pointTarget == undefined){
+                    let distance = 500
+                    let animal = null
+                    for(let j=0;j<animalManager.animals.length;j++){
+                        if(Math.sqrt((this.enemies[i].x - animalManager.animals[j].x)**2 + (this.enemies[i].y - animalManager.animals[j].y)**2) < distance && !animalManager.animals[j].held){
+                            distance = Math.sqrt((this.enemies[i].x - animalManager.animals[j].x)**2 + (this.enemies[i].y - animalManager.animals[j].y)**2)
+                            animal = j
+                        }
                     }
-                }
-                if(animal != null){
-                    if(this.enemies[i].x > animalManager.animals[animal].x){
+                    if(animal != null || animal != undefined){
+                        if(this.enemies[i].x > animalManager.animals[animal].x){
+                            this.enemies[i].targetX -= this.speed
+                        } else if(this.enemies[i].x < animalManager.animals[animal].x){
+                            this.enemies[i].targetX += this.speed
+                        }
+                        if(this.enemies[i].y > animalManager.animals[animal].y){
+                            this.enemies[i].targetY -= this.speed
+                        } else if(this.enemies[i].y < animalManager.animals[animal].y){
+                            this.enemies[i].targetY += this.speed
+                        }
+                        if(this.enemies[i].x + this.enemies[i].w > animalManager.animals[animal].x
+                            && this.enemies[i].x < animalManager.animals[animal].x + animalManager.animals[animal].w
+                            && this.enemies[i].y + this.enemies[i].h > animalManager.animals[animal].y
+                            && this.enemies[i].y < animalManager.animals[animal].y + animalManager.animals[animal].h){
+                                this.enemies[i].pointTarget = [objectManager.objects[0].x,objectManager.objects[0].y]
+                        }
+                    } else {
+                        console.log(false)
+                        if(renderManager.totalFrames % 300 == 0){
+                            console.log(true)
+                            this.enemies[i].randomDirection = [Math.round(Math.random()*2)-1,Math.round(Math.random()*2)-1]
+                        } else {
+                            this.enemies[i].targetX += this.enemies[i].randomDirection[0] * this.speed
+                            this.enemies[i].targetY += this.enemies[i].randomDirection[1] * this.speed
+                        }
+                    }
+                } else {
+                    if(this.enemies[i].x > objectManager.objects[0].x){
                         this.enemies[i].targetX -= this.speed
-                    } else if(this.enemies[i].x < animalManager.animals[animal].x){
+                    } else if(this.enemies[i].x < objectManager.objects[0].x){
                         this.enemies[i].targetX += this.speed
                     }
-                    if(this.enemies[i].y > animalManager.animals[animal].y){
+                    if(this.enemies[i].y > objectManager.objects[0].y){
                         this.enemies[i].targetY -= this.speed
-                    } else if(this.enemies[i].y < animalManager.animals[animal].y){
+                    } else if(this.enemies[i].y < objectManager.objects[0].y){
                         this.enemies[i].targetY += this.speed
                     }
-                    if(this.enemies[i].x + this.enemies[i].w > animalManager.animals[animal].x
-                        && this.enemies[i].x < animalManager.animals[animal].x + animalManager.animals[animal].w
-                        && this.enemies[i].y + this.enemies[i].h > animalManager.animals[animal].y
-                        && this.enemies[i].y < animalManager.animals[animal].y + animalManager.animals[animal].h){
-                            this.enemies[i].pointTarget = biomeManager.points[Math.random()]
+                    if(this.enemies[i].x + this.enemies[i].w > objectManager.objects[0].x
+                        && this.enemies[i].x < objectManager.objects[0].x + objectManager.objects[0].w
+                        && this.enemies[i].y + this.enemies[i].h > objectManager.objects[0].y
+                        && this.enemies[i].y < objectManager.objects[0].y + objectManager.objects[0].h){
+                            this.enemies[i].pointTarget = undefined
                     }
                 }
             }

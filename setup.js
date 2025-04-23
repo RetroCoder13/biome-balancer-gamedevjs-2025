@@ -172,6 +172,9 @@ function setup(){
     renderManager.createState("camel","idle",true,62)
     renderManager.addImages("assets/textures/animals/camel/idle","camel","idle",62)
 
+    objectManager.addObject(new Mainframe(0,0,45,45))
+    objectManager.addObject(new Keycard(0,0,45,45))
+
     for(let i=0;i<1000/5*2;i++){
         let object = objectManager.objectTypes[Math.round(Math.random()*(objectManager.objectTypes.length-1))]
         if(object == "iceberg"){
@@ -180,9 +183,6 @@ function setup(){
             objectManager.addObject(new CollisionObject(0,0,45,45,object))
         }
     }
-
-    objectManager.addObject(new Mainframe(0,0,45,45))
-    objectManager.addObject(new Keycard(0,0,45,45))
 
     objectManager.positionObjects(biomeManager)
 
@@ -207,7 +207,6 @@ function setup(){
     renderManager.addImage("assets/textures/biome/iceberg/top.png","objects","iceberg top")
 
     enemyManager.addEnemy(new Enemy(100,100,50,50))
-    animalManager.addAnimal(new Animal(200,100,50,50,1,"panda"))
 
     renderManager.createObject("enemy")
     renderManager.createState("enemy","walk",true,8)

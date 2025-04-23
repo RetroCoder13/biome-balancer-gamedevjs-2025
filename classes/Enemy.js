@@ -6,6 +6,7 @@ class Enemy{
         this.h = h
 
         this.pointTarget = undefined
+        this.randomDirection = [0,0]
 
         this.targetX = this.x
         this.targetY = this.y

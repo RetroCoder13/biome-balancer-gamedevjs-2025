@@ -13,13 +13,13 @@ function update(){
             compendiumUI.update(renderManager,inputManager,cameraManager,animalManager)
         }
         if(!mapUI.active && !compendiumUI.active){
-            renderManager.update()
             biomeManager.update(renderManager)
             objectManager.update(renderManager,player)
             enemyManager.update(renderManager,animalManager,objectManager,biomeManager)
             player.update(renderManager,inputManager,biomeManager)
             animalManager.update(renderManager,inputManager,player,endMenu)
             hud.update(renderManager,cameraManager,animalManager,objectManager,biomeManager,player)
+            renderManager.update()
         }
         cameraManager.update(player)
     }
