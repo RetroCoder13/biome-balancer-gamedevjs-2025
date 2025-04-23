@@ -32,7 +32,7 @@ function lerp(a,b,t){
 
 update()
 
-var windowScale = 0
+var windowScale = 1
 window.addEventListener('resize',function(e){
     let width = this.window.innerWidth
     let height = this.window.innerHeight
