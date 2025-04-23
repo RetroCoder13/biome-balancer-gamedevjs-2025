@@ -21,7 +21,7 @@ class EnemyManager{
     }
 
     update(renderManager,animalManager,objectManager,biomeManager){
-        if(this.active){
+        if(objectManager.mainframeActive){
             for(let i=0;i<this.enemies.length;i++){
                 if(this.enemies[i].pointTarget == undefined){
                     let distance = 500
@@ -84,7 +84,7 @@ class EnemyManager{
             }
         }
         for(let i=0;i<this.enemies.length;i++){
-            this.enemies[i].render(renderManager,this.active)
+            this.enemies[i].render(renderManager,objectManager.mainframeActive)
         }
     }
 }
