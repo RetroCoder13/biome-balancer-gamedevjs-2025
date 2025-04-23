@@ -1,14 +1,16 @@
 class Menu{
-    constructor(offsetX,offsetY,w,h){
+    constructor(w,h){
         this.active = true
-        this.offsetX = -offsetX
-        this.offsetY = -offsetY
+        this.offsetX = 0
+        this.offsetY = 0
         this.w = w
         this.h = h
         this.gameName = "game name"
     }
 
-    update(inputManager,renderManager){
+    update(inputManager,renderManager,cameraManager){
+        this.offsetX = cameraManager.x-cameraManager.offsetX-offset[0]
+        this.offsetY = cameraManager.y-cameraManager.offsetY-offset[1]
         ctx.fillStyle = "#000000"
         ctx.fillRect(this.offsetX,this.offsetY,this.w,this.h)
         renderManager.renderText(this.gameName,this.offsetX+(this.w-this.gameName.length*60)/2,this.offsetY+50,50)
@@ -21,12 +23,10 @@ class Menu{
 }
 
 class EndMenu extends Menu{
-    setOffset(offsetX,offsetY){
-        this.offsetX = offsetX - this.w/2
-        this.offsetY = offsetY - this.h/2
-    }
 
-    update(inputManager,renderManager){
+    update(inputManager,renderManager,cameraManager){
+        this.offsetX = cameraManager.x-cameraManager.offsetX-offset[0]
+        this.offsetY = cameraManager.y-cameraManager.offsetY-offset[1]
         ctx.fillStyle = "#000000"
         ctx.fillRect(this.offsetX,this.offsetY,this.w,this.h)
         renderManager.renderText(this.gameName,this.offsetX+(this.w-this.gameName.length*60)/2,this.offsetY+50,50)

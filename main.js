@@ -2,9 +2,9 @@ function update(){
     ctx.clearRect(cameraManager.x-cameraManager.offsetX-offset[0],cameraManager.y-cameraManager.offsetY-offset[1],canvas.width,canvas.height)
 
     if(endMenu.active){
-        endMenu.update(inputManager,renderManager)
+        endMenu.update(inputManager,renderManager,cameraManager)
     } else if(menu.active){
-        menu.update(inputManager,renderManager)
+        menu.update(inputManager,renderManager,cameraManager)
     } else {
         if(!compendiumUI.active){
             mapUI.update(renderManager,inputManager,cameraManager,player,biomeManager,animalManager)

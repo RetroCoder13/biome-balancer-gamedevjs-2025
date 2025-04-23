@@ -26,8 +26,8 @@ var objectManager = new ObjectManager()
 var mapUI = new MapUI(cameraManager,1000,500,"m")
 var compendiumUI = new CompendiumUI(cameraManager,1000,500,"c")
 var hud = new HUD(cameraManager,1000,500)
-var menu = new Menu(offset[0],offset[1],1000,500)
-var endMenu = new EndMenu(offset[0],offset[1],1000,500)
+var menu = new Menu(1000,500)
+var endMenu = new EndMenu(1000,500)
 
 function setup(){
     ctx.resetTransform()
@@ -101,7 +101,7 @@ function setup(){
     renderManager.createState("player","swimAnimal",true,8)
     renderManager.addImages("assets/textures/player/swim/animal","player","swimAnimal",8)
 
-    for(let i=0;i<15;i++){
+    for(let i=0;i<10;i++){
         let animal = animalManager.animalTypes[Math.round(Math.random()*(animalManager.animalTypes.length-1))]
         if(animal == "panda"){
             animalManager.addAnimal(new Animal(0,0,100,100,1,animal))
@@ -196,7 +196,7 @@ function setup(){
 
     // menu = new Menu(offset[0],offset[1],1000,500)
 
-    endMenu = new EndMenu(offset[0],offset[1],1000,500)
+    endMenu = new EndMenu(1000,500)
     endMenu.active = false
 
     renderManager.createState("menu","play",false)
