@@ -27,7 +27,7 @@ class EnemyManager{
                     let distance = 500
                     let animal = null
                     for(let j=0;j<animalManager.animals.length;j++){
-                        if(Math.sqrt((this.enemies[i].x - animalManager.animals[j].x)**2 + (this.enemies[i].y - animalManager.animals[j].y)**2) < distance && !animalManager.animals[j].held){
+                        if(Math.sqrt((this.enemies[i].x - animalManager.animals[j].x)**2 + (this.enemies[i].y - animalManager.animals[j].y)**2) < distance && !animalManager.animals[j].held && Math.sqrt((objectManager.objects[0].x - animalManager.animals[j].x)**2 + (objectManager.objects[0].y - animalManager.animals[j].y)**2) > distance){
                             distance = Math.sqrt((this.enemies[i].x - animalManager.animals[j].x)**2 + (this.enemies[i].y - animalManager.animals[j].y)**2)
                             animal = j
                         }
@@ -48,6 +48,7 @@ class EnemyManager{
                             && this.enemies[i].y + this.enemies[i].h > animalManager.animals[animal].y
                             && this.enemies[i].y < animalManager.animals[animal].y + animalManager.animals[animal].h){
                                 this.enemies[i].pointTarget = [objectManager.objects[0].x,objectManager.objects[0].y]
+                                this.enemies[i].targetAnimal = animal
                         }
                     } else {
                         console.log(false)
@@ -70,11 +71,14 @@ class EnemyManager{
                     } else if(this.enemies[i].y < objectManager.objects[0].y){
                         this.enemies[i].targetY += this.speed
                     }
+                    animalManager.animals[this.enemies[i].targetAnimal].targetX = this.enemies[i].x - (animalManager.animals[this.enemies[i].targetAnimal].w - 50)/2
+                    animalManager.animals[this.enemies[i].targetAnimal].targetY = this.enemies[i].y - animalManager.animals[this.enemies[i].targetAnimal].h
                     if(this.enemies[i].x + this.enemies[i].w > objectManager.objects[0].x
                         && this.enemies[i].x < objectManager.objects[0].x + objectManager.objects[0].w
                         && this.enemies[i].y + this.enemies[i].h > objectManager.objects[0].y
                         && this.enemies[i].y < objectManager.objects[0].y + objectManager.objects[0].h){
                             this.enemies[i].pointTarget = undefined
+                            this.enemies[i].targetAnimal = undefined
                     }
                 }
             }
