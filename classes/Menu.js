@@ -5,13 +5,13 @@ class Menu{
         this.offsetY = -offsetY
         this.w = w
         this.h = h
+        this.gameName = "game name"
     }
 
     update(inputManager,renderManager){
-        let name = "game name"
         ctx.fillStyle = "#000000"
         ctx.fillRect(this.offsetX,this.offsetY,this.w,this.h)
-        renderManager.renderText(name,this.offsetX+(this.w-name.length*60)/2,this.offsetY+50,50)
+        renderManager.renderText(this.gameName,this.offsetX+(this.w-this.gameName.length*60)/2,this.offsetY+50,50)
         renderManager.render("menu","play",this.offsetX+(this.w-500)/2,this.offsetY+150,500,250)
         let mouse = inputManager.getMouse()
         if(mouse.pos[0] >= this.offsetX+(this.w-500)/2 && mouse.pos[0] <= this.offsetX+(this.w-500)/2 + 500 && mouse.pos[1] >= this.offsetY+150 && mouse.pos[1] <= this.offsetY+150 + 250 && mouse.click){
@@ -24,5 +24,18 @@ class EndMenu extends Menu{
     setOffset(offsetX,offsetY){
         this.offsetX = offsetX - this.w/2
         this.offsetY = offsetY - this.h/2
+    }
+
+    update(inputManager,renderManager){
+        ctx.fillStyle = "#000000"
+        ctx.fillRect(this.offsetX,this.offsetY,this.w,this.h)
+        renderManager.renderText(this.gameName,this.offsetX+(this.w-this.gameName.length*60)/2,this.offsetY+50,50)
+        let thanks = "thank you for playing"
+        renderManager.renderText(thanks,this.offsetX+(this.w-thanks.length*30)/2,this.offsetY+150,25)
+        renderManager.render("menu","play",this.offsetX+(this.w-300)/2,this.offsetY+300,300,150)
+        let mouse = inputManager.getMouse()
+        if(mouse.pos[0] >= this.offsetX+(this.w-300)/2 && mouse.pos[0] <= this.offsetX+(this.w-300)/2 + 300 && mouse.pos[1] >= this.offsetY+300 && mouse.pos[1] <= this.offsetY+300 + 150 && mouse.click){
+            this.active = false
+        }
     }
 }
