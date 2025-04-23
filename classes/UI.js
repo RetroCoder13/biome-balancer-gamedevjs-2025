@@ -109,10 +109,17 @@ class CompendiumUI extends UI{
     }
 
     render(renderManager,inputManager,animalManager){
+        let biome = biomeManager.checkPlayerBiome(player)
+        let bgSize = 100
+        for(let i=0;i<1000/bgSize;i++){
+            for(let j=0;j<500/bgSize;j++){
+                renderManager.render("biome",biome,this.x+i*bgSize,this.y+j*bgSize,bgSize,bgSize)
+            }
+        }
         let size = 75
         let offset = [100,80]
         ctx.fillStyle = "#000000"
-        ctx.fillRect(this.x,this.y,1000,500)
+        ctx.fillRect(this.x+90,this.y+10,315,45)
         renderManager.renderText("compendium",this.x+100,this.y+20,25)
         renderManager.render("icons","keyesc",this.x+10,this.y+10,50,50)
         let mouse = inputManager.getMouse()
