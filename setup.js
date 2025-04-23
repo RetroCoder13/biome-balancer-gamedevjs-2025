@@ -206,7 +206,10 @@ function setup(){
     renderManager.createState("objects","iceberg top",false)
     renderManager.addImage("assets/textures/biome/iceberg/top.png","objects","iceberg top")
 
-    enemyManager.addEnemy(new Enemy(100,100,50,50))
+    for(let i=0;i<2;i++){
+        enemyManager.addEnemy(new Enemy(100,100,50,50))
+    }
+    enemyManager.positionEnemies(biomeManager)
 
     renderManager.createObject("enemy")
     renderManager.createState("enemy","walk",true,8)

@@ -10,7 +10,7 @@ class EnemyManager{
     }
 
     positionEnemies(biomeManager){
-        for(let i=0;i<this.animals.length;i++){
+        for(let i=0;i<this.enemies.length;i++){
             let point = []
             point = [biomeManager.x+Math.round(Math.random()*(biomeManager.width-biomeManager.size*2)/biomeManager.size)*biomeManager.size, biomeManager.y+Math.round(Math.random()*(biomeManager.height-biomeManager.size*2)/biomeManager.size)*biomeManager.size]
             this.enemies[i].targetX = point[0]
@@ -51,9 +51,7 @@ class EnemyManager{
                                 this.enemies[i].targetAnimal = animal
                         }
                     } else {
-                        console.log(false)
                         if(renderManager.totalFrames % 300 == 0){
-                            console.log(true)
                             this.enemies[i].randomDirection = [Math.round(Math.random()*2)-1,Math.round(Math.random()*2)-1]
                         } else {
                             this.enemies[i].targetX += this.enemies[i].randomDirection[0] * this.speed
@@ -84,7 +82,7 @@ class EnemyManager{
             }
         }
         for(let i=0;i<this.enemies.length;i++){
-            this.enemies[i].render(renderManager,objectManager.mainframeActive)
+            this.enemies[i].render(renderManager,biomeManager,objectManager.mainframeActive)
         }
     }
 }
