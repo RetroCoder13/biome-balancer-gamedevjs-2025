@@ -168,6 +168,10 @@ function setup(){
     renderManager.createState("snake","idle",true,33)
     renderManager.addImages("assets/textures/animals/snake/idle","snake","idle",33)
 
+    renderManager.createObject("camel")
+    renderManager.createState("camel","idle",true,62)
+    renderManager.addImages("assets/textures/animals/camel/idle","camel","idle",62)
+
     for(let i=0;i<1000/5*2;i++){
         let object = objectManager.objectTypes[Math.round(Math.random()*(objectManager.objectTypes.length-1))]
         if(object == "iceberg"){
