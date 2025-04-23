@@ -150,6 +150,14 @@ function setup(){
     renderManager.createState("crab","idle",true,32)
     renderManager.addImages("assets/textures/animals/crab/idle","crab","idle",32)
 
+    renderManager.createObject("arctic fox")
+    renderManager.createState("arctic fox","idle",true,34)
+    renderManager.addImages("assets/textures/animals/arctic fox/idle","arctic fox","idle",34)
+
+    renderManager.createObject("desert fox")
+    renderManager.createState("desert fox","idle",true,34)
+    renderManager.addImages("assets/textures/animals/desert fox/idle","desert fox","idle",34)
+
     for(let i=0;i<1000/5*2;i++){
         let object = objectManager.objectTypes[Math.round(Math.random()*(objectManager.objectTypes.length-1))]
         if(object == "iceberg"){
