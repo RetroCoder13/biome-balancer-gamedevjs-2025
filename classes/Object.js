@@ -8,7 +8,7 @@ class CollisionObject{
     }
 
     update(){
-        renderManager.render("objects",this.type,this.x,this.y,this.w,this.h)
+        renderManager.render("objects",this.type,this.x-5,this.y-5,this.w+10,this.h+10)
     }
 }
 
@@ -33,9 +33,9 @@ class Mainframe extends CollisionObject{
 
     update(){
         if(this.active){
-            renderManager.render("objects","mainframe",this.x,this.y,this.w,this.h)
+            renderManager.render("objects","mainframe",this.x-5,this.y-5,this.w+10,this.h+10)
         } else {
-            renderManager.render("objects","mainframeDead",this.x,this.y,this.w,this.h)
+            renderManager.render("objects","mainframeDead",this.x-5,this.y-5,this.w+10,this.h+10)
         }
     }
 }
