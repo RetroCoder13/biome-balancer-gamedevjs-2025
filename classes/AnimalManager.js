@@ -3,8 +3,8 @@ class AnimalManager{
         this.animals = []
         this.canPickup = false
         this.canDrop = false
-        // this.animalTypes = ["rabbit","fox","deer","desert fox","camel","desert mouse","panda","monkey","tiger","fish","turtle","crab","arctic fox","polar bear","reindeer"]
-        this.animalTypes = ["rabbit","fox","desert fox","desert mouse","panda","fish","turtle","crab","arctic fox"]
+        // this.animalTypes = ["rabbit","fox","deer","fennec fox","camel","desert mouse","panda","monkey","tiger","fish","turtle","crab","arctic fox","polar bear","reindeer"]
+        this.animalTypes = ["rabbit","fox","fennec fox","desert mouse","panda","fish","turtle","crab","arctic fox"]
         this.foundAnimals = []
     }
 
@@ -34,7 +34,7 @@ class AnimalManager{
             while((biome == "forest" && this.animals[i].type == "rabbit")
                 || (biome == "forest" && this.animals[i].type == "fox")
                 || (biome == "forest" && this.animals[i].type == "deer")
-                || (biome == "desert" && this.animals[i].type == "desert fox")
+                || (biome == "desert" && this.animals[i].type == "fennec fox")
                 || (biome == "desert" && this.animals[i].type == "camel")
                 || (biome == "desert" && this.animals[i].type == "desert mouse")
                 || (biome == "jungle" && this.animals[i].type == "panda")

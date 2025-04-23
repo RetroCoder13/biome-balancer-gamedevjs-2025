@@ -50,7 +50,7 @@ class Animal{
         if(((biome == "forest" && this.type == "rabbit")
             || (biome == "forest" && this.type == "fox")
             || (biome == "forest" && this.type == "deer")
-            || (biome == "desert" && this.type == "desert fox")
+            || (biome == "desert" && this.type == "fennec fox")
             || (biome == "desert" && this.type == "camel")
             || (biome == "desert" && this.type == "desert mouse")
             || (biome == "jungle" && this.type == "panda")

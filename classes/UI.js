@@ -158,8 +158,8 @@ class CompendiumUI extends UI{
                 renderManager.renderText("",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 90,10)
             }
             renderManager.renderText("biome: forest",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 50,20)
-        } else if(animal == "desert fox" || animal == "camel" || animal == "desert mouse"){
-            if(animal == "desert fox"){
+        } else if(animal == "fennec fox" || animal == "camel" || animal == "desert mouse"){
+            if(animal == "fennec fox"){
                 renderManager.renderText("",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 90,10)
             } else if(animal == "camel"){
                 renderManager.renderText("",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 90,10)

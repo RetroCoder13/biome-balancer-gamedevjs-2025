@@ -154,9 +154,9 @@ function setup(){
     renderManager.createState("arctic fox","idle",true,34)
     renderManager.addImages("assets/textures/animals/arctic fox/idle","arctic fox","idle",34)
 
-    renderManager.createObject("desert fox")
-    renderManager.createState("desert fox","idle",true,34)
-    renderManager.addImages("assets/textures/animals/desert fox/idle","desert fox","idle",34)
+    renderManager.createObject("fennec fox")
+    renderManager.createState("fennec fox","idle",true,34)
+    renderManager.addImages("assets/textures/animals/fennec fox/idle","fennec fox","idle",34)
 
     for(let i=0;i<1000/5*2;i++){
         let object = objectManager.objectTypes[Math.round(Math.random()*(objectManager.objectTypes.length-1))]
