@@ -30,7 +30,7 @@ class EndMenu extends Menu{
         ctx.fillStyle = "#000000"
         ctx.fillRect(this.offsetX,this.offsetY,this.w,this.h)
         renderManager.renderText(this.gameName,this.offsetX+(this.w-this.gameName.length*60)/2,this.offsetY+50,50)
-        let thanks = "thank you for playing"
+        let thanks = "thank you for saving the animals"
         renderManager.renderText(thanks,this.offsetX+(this.w-thanks.length*30)/2,this.offsetY+150,25)
         renderManager.render("menu","play",this.offsetX+(this.w-300)/2,this.offsetY+300,300,150)
         let mouse = inputManager.getMouse()
