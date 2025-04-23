@@ -167,12 +167,12 @@ class CompendiumUI extends UI{
                 renderManager.renderText("",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 90,10)
             }
             renderManager.renderText("biome: desert",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 50,20)
-        } else if(animal == "panda" || animal == "monkey" || animal == "tiger"){
+        } else if(animal == "panda" || animal == "monkey" || animal == "snake"){
             if(animal == "panda"){
                 renderManager.renderText("",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 90,10)
             } else if(animal == "monkey"){
                 renderManager.renderText("",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 90,10)
-            } else if(animal == "tiger"){
+            } else if(animal == "snake"){
                 renderManager.renderText("",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 90,10)
             }
             renderManager.renderText("biome: jungle",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 50,20)

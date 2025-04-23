@@ -3,7 +3,7 @@ class AnimalManager{
         this.animals = []
         this.canPickup = false
         this.canDrop = false
-        // this.animalTypes = ["rabbit","fox","deer","fennec fox","camel","desert mouse","panda","monkey","tiger","fish","turtle","crab","arctic fox","polar bear","reindeer"]
+        // this.animalTypes = ["rabbit","fox","deer","fennec fox","camel","desert mouse","panda","monkey","snake","fish","turtle","crab","arctic fox","polar bear","reindeer"]
         this.animalTypes = ["rabbit","fox","fennec fox","desert mouse","panda","fish","turtle","crab","arctic fox","polar bear"]
         this.foundAnimals = []
     }
@@ -39,7 +39,7 @@ class AnimalManager{
                 || (biome == "desert" && this.animals[i].type == "desert mouse")
                 || (biome == "jungle" && this.animals[i].type == "panda")
                 || (biome == "jungle" && this.animals[i].type == "monkey")
-                || (biome == "jungle" && this.animals[i].type == "tiger")
+                || (biome == "jungle" && this.animals[i].type == "snake")
                 || (biome == "ocean" && this.animals[i].type == "fish")
                 || (biome == "ocean" && this.animals[i].type == "turtle")
                 || (biome == "ocean" && this.animals[i].type == "crab")

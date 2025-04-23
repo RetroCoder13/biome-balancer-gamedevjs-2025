@@ -55,7 +55,7 @@ class Animal{
             || (biome == "desert" && this.type == "desert mouse")
             || (biome == "jungle" && this.type == "panda")
             || (biome == "jungle" && this.type == "monkey")
-            || (biome == "jungle" && this.type == "tiger")
+            || (biome == "jungle" && this.type == "snake")
             || (biome == "ocean" && this.type == "fish")
             || (biome == "ocean" && this.type == "turtle")
             || (biome == "ocean" && this.type == "crab")
