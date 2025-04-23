@@ -22,6 +22,7 @@ var inputManager = new InputManager(cameraManager,offset[0],offset[1])
 var animalManager = new AnimalManager()
 var biomeManager = new BiomeManager(mapSize[0],mapSize[1],50,player)
 var objectManager = new ObjectManager()
+var enemyManager = new EnemyManager()
 
 var mapUI = new MapUI(cameraManager,1000,500,"m")
 var compendiumUI = new CompendiumUI(cameraManager,1000,500,"c")
@@ -42,6 +43,7 @@ function setup(){
     animalManager = new AnimalManager()
     biomeManager = new BiomeManager(mapSize[0],mapSize[1],50,player)
     objectManager = new ObjectManager()
+    enemyManager = new EnemyManager()
     
     biomeManager.generateBiomes()
 
@@ -199,6 +201,15 @@ function setup(){
     renderManager.addImage("assets/textures/biome/iceberg/middle.png","objects","iceberg middle")
     renderManager.createState("objects","iceberg top",false)
     renderManager.addImage("assets/textures/biome/iceberg/top.png","objects","iceberg top")
+
+    enemyManager.addEnemy(new Enemy(100,100,50,50))
+    animalManager.addAnimal(new Animal(200,100,50,50,1,"panda"))
+
+    renderManager.createObject("enemy")
+    renderManager.createState("enemy","walk",true,8)
+    renderManager.addImages("assets/textures/enemy/walk","enemy","walk",8)
+    renderManager.createState("enemy","death",true,11)
+    renderManager.addImages("assets/textures/enemy/death","enemy","death",11)
 
     audioManager.createGroup("music")
     audioManager.createState("music","music")
