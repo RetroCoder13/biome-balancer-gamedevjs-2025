@@ -28,7 +28,6 @@ function update(){
     } else {
         totalFrames++
         ctx.fillStyle = "#000000"
-        console.log(totalFrames)
         for(let i=0;i<50;i++){
             ctx.fillRect(20*Math.cos((totalFrames-i)/10),20*Math.sin((totalFrames-i)/10),2,2)
         }
