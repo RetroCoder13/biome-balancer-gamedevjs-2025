@@ -55,7 +55,8 @@ class ObjectManager{
 
     update(renderManager,player){
         player.disable = [false,false,false,false]
-        for(let i=0;i<this.objects.length;i++){
+        for(let j=0;j<this.objects.length;j++){
+            let i = this.objects.length - 1 - j
             // if((player.y + player.h >= this.objects[i].y) && (player.y <= this.objects[i].y + this.objects[i].h) && (player.x + player.w >= this.objects[i].x) && (player.x <= this.objects[i].x + this.objects[i].w)){
             //     if(this.objects[i] instanceof Keycard){
             //         this.objects[i].found = true
