@@ -6,6 +6,7 @@ class UI{
         this.x = cameraManager.x-cameraManager.offsetX-offset[0]
         this.y = cameraManager.y-cameraManager.offsetY-offset[1]
         this.triggerKey = triggerKey
+        this.cooldown = false
     }
 
     updatePosition(cameraManager){
@@ -14,10 +15,11 @@ class UI{
     }
 
     update(renderManager,inputManager,cameraManager){
-        if(inputManager.getKey(this.triggerKey)){
-            this.active = true
-        } else if(inputManager.getKey("Escape")){
-            this.active = false
+        if(inputManager.getKey(this.triggerKey) && !this.cooldown){
+            this.active = !this.active
+            this.cooldown = true
+            let that = this
+            setTimeout(function(){that.cooldown = false},100)
         }
         if(this.active){
             this.updatePosition(cameraManager)
@@ -32,10 +34,11 @@ class UI{
 
 class MapUI extends UI{
     update(renderManager,inputManager,cameraManager,player,biomeManager,animalManager){
-        if(inputManager.getKey(this.triggerKey)){
-            this.active = true
-        } else if(inputManager.getKey("Escape")){
-            this.active = false
+        if(inputManager.getKey(this.triggerKey) && !this.cooldown){
+            this.active = !this.active
+            this.cooldown = true
+            let that = this
+            setTimeout(function(){that.cooldown = false},100)
         }
         if(this.active){
             this.updatePosition(cameraManager)
@@ -97,10 +100,11 @@ class MapUI extends UI{
 class CompendiumUI extends UI{
 
     update(renderManager,inputManager,cameraManager,animalManager){
-        if(inputManager.getKey(this.triggerKey)){
-            this.active = true
-        } else if(inputManager.getKey("Escape")){
-            this.active = false
+        if(inputManager.getKey(this.triggerKey) && !this.cooldown){
+            this.active = !this.active
+            this.cooldown = true
+            let that = this
+            setTimeout(function(){that.cooldown = false},100)
         }
         if(this.active){
             this.updatePosition(cameraManager)
