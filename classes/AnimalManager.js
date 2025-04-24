@@ -4,7 +4,13 @@ class AnimalManager{
         this.canPickup = false
         this.canDrop = false
         this.animalTypes = ["rabbit","fox","deer","fennec fox","camel","desert mouse","panda","monkey","snake","fish","turtle","crab","arctic fox","polar bear","reindeer"]
-        this.foundAnimals = []
+
+        if(localStorage.getItem("biome-balancer-compendium") == null){
+            this.foundAnimals = []
+            localStorage.setItem("biome-balancer-compendium",JSON.stringify([]))
+        } else {
+            this.foundAnimals = JSON.parse(localStorage.getItem("biome-balancer-compendium"))
+        }
     }
 
     addAnimal(animal){
@@ -80,6 +86,8 @@ class AnimalManager{
                         player.holdingAnimal = true
                         if(!this.foundAnimals.includes(this.animals[i].type)){
                             this.foundAnimals.push(this.animals[i].type)
+                            localStorage.setItem("biome-balancer-compendium",JSON.stringify(this.foundAnimals))
+
                         }
                     } else {
                         this.canPickup = true
