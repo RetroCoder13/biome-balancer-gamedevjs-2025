@@ -8,7 +8,7 @@ class Menu{
         this.gameName = "biome balancer"
     }
 
-    update(inputManager,renderManager,cameraManager){
+    update(inputManager,renderManager,cameraManager,audioManager){
         this.offsetX = cameraManager.x-cameraManager.offsetX-offset[0]
         this.offsetY = cameraManager.y-cameraManager.offsetY-offset[1]
         ctx.fillStyle = "#000000"
@@ -18,12 +18,13 @@ class Menu{
         let mouse = inputManager.getMouse()
         if(mouse.pos[0] >= this.offsetX+(this.w-500)/2 && mouse.pos[0] <= this.offsetX+(this.w-500)/2 + 500 && mouse.pos[1] >= this.offsetY+150 && mouse.pos[1] <= this.offsetY+150 + 250 && mouse.click){
             this.active = false
+            audioManager.play("music","music")
         }
     }
 }
 
 class EndMenu extends Menu{
-    update(inputManager,renderManager,cameraManager){
+    update(inputManager,renderManager,cameraManager,audioManager){
         this.offsetX = cameraManager.x-cameraManager.offsetX-offset[0]
         this.offsetY = cameraManager.y-cameraManager.offsetY-offset[1]
         ctx.fillStyle = "#000000"
@@ -35,6 +36,7 @@ class EndMenu extends Menu{
         let mouse = inputManager.getMouse()
         if(mouse.pos[0] >= this.offsetX+(this.w-300)/2 && mouse.pos[0] <= this.offsetX+(this.w-300)/2 + 300 && mouse.pos[1] >= this.offsetY+300 && mouse.pos[1] <= this.offsetY+300 + 150 && mouse.click){
             this.active = false
+            audioManager.stop("music","music")
             setup()
         }
     }

@@ -232,7 +232,6 @@ function setup(){
     audioManager.createGroup("music")
     audioManager.createState("music","music")
     audioManager.addSound("assets/sounds/music/music.wav","music","music",true)
-    audioManager.play("music","music")
 
     mapUI = new MapUI(cameraManager,1000,500,"m")
     compendiumUI = new CompendiumUI(cameraManager,1000,500,"c")

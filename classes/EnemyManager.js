@@ -2,7 +2,7 @@ class EnemyManager{
     constructor(){
         this.enemies = []
         this.active = true
-        this.speed = 1
+        this.speed = .5
     }
 
     addEnemy(enemy){

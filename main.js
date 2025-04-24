@@ -4,9 +4,9 @@ function update(){
 
     if(renderManager.loaded && audioManager.loaded){
         if(endMenu.active){
-            endMenu.update(inputManager,renderManager,cameraManager)
+            endMenu.update(inputManager,renderManager,cameraManager,audioManager)
         } else if(menu.active){
-            menu.update(inputManager,renderManager,cameraManager)
+            menu.update(inputManager,renderManager,cameraManager,audioManager)
         } else {
             if(!compendiumUI.active){
                 mapUI.update(renderManager,inputManager,cameraManager,player,biomeManager,animalManager)
