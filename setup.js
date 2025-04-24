@@ -180,6 +180,10 @@ function setup(){
     renderManager.createState("reindeer","idle",true,72)
     renderManager.addImages("assets/textures/animals/reindeer/idle","reindeer","idle",72)
 
+    renderManager.createObject("monkey")
+    renderManager.createState("monkey","idle",true,53)
+    renderManager.addImages("assets/textures/animals/monkey/idle","monkey","idle",53)
+
     objectManager.addObject(new Mainframe(0,0,45,45))
     objectManager.addObject(new Keycard(0,0,45,45))
 
