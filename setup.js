@@ -105,7 +105,7 @@ function setup(){
 
     for(let i=0;i<15;i++){
         let animal = animalManager.animalTypes[Math.round(Math.random()*(animalManager.animalTypes.length-1))]
-        if(animal == "panda" || animal == "polar bear" || animal == "camel" || animal == "deer"){
+        if(animal == "panda" || animal == "polar bear" || animal == "camel" || animal == "deer" || animal == "reindeer"){
             animalManager.addAnimal(new Animal(0,0,100,100,1,animal))
         } else if(animal == "fish"){
             animalManager.addAnimal(new Animal(0,0,50,25,1,animal))
@@ -175,6 +175,10 @@ function setup(){
     renderManager.createObject("deer")
     renderManager.createState("deer","idle",true,72)
     renderManager.addImages("assets/textures/animals/deer/idle","deer","idle",72)
+
+    renderManager.createObject("reindeer")
+    renderManager.createState("reindeer","idle",true,72)
+    renderManager.addImages("assets/textures/animals/reindeer/idle","reindeer","idle",72)
 
     objectManager.addObject(new Mainframe(0,0,45,45))
     objectManager.addObject(new Keycard(0,0,45,45))
