@@ -215,6 +215,14 @@ function setup(){
     renderManager.addImage("assets/textures/biome/iceberg/middle.png","objects","iceberg middle")
     renderManager.createState("objects","iceberg top",false)
     renderManager.addImage("assets/textures/biome/iceberg/top.png","objects","iceberg top")
+    renderManager.createState("objects","tree trunk",false)
+    renderManager.addImage("assets/textures/biome/tree/trunk.png","objects","tree trunk")
+    renderManager.createState("objects","tree leaf",false)
+    renderManager.addImage("assets/textures/biome/tree/leaf.png","objects","tree leaf")
+    renderManager.createState("objects","palmtree trunk",false)
+    renderManager.addImage("assets/textures/biome/palmtree/trunk.png","objects","palmtree trunk")
+    renderManager.createState("objects","palmtree leaf",false)
+    renderManager.addImage("assets/textures/biome/palmtree/leaf.png","objects","palmtree leaf")
 
     for(let i=0;i<2;i++){
         enemyManager.addEnemy(new Enemy(100,100,50,50))
