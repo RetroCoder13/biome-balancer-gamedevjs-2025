@@ -184,7 +184,7 @@ function setup(){
     renderManager.createState("monkey","idle",true,53)
     renderManager.addImages("assets/textures/animals/monkey/idle","monkey","idle",53)
 
-    objectManager.addObject(new Mainframe(0,0,45,45))
+    objectManager.addObject(new Mainframe(0,0,100,100))
     objectManager.addObject(new Keycard(0,0,45,45))
 
     for(let i=0;i<1000/5*2;i++){
