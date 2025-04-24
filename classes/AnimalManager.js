@@ -7,7 +7,7 @@ class AnimalManager{
 
         if(localStorage.getItem("biome-balancer-compendium") == null){
             this.foundAnimals = []
-            localStorage.setItem("biome-balancer-compendium",JSON.stringify([]))
+            localStorage.setItem("biome-balancer-compendium",JSON.stringify(this.foundAnimals))
         } else {
             this.foundAnimals = JSON.parse(localStorage.getItem("biome-balancer-compendium"))
         }

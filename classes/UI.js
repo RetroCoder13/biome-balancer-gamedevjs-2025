@@ -195,5 +195,12 @@ class CompendiumUI extends UI{
             }
             renderManager.renderText("biome: tundra",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 50,20)
         }
+        ctx.fillStyle = "#000000"
+        ctx.fillRect(this.x + 10,this.y + 450,135,40)
+        renderManager.renderText("reset",this.x + 20,this.y+460,20)
+        if(mouse.pos[0] >= this.x + 10 && mouse.pos[0] <= this.x + 145 && mouse.pos[1] >= this.y + 450 && this.y <= this.y + 490){
+            animalManager.foundAnimals = []
+            localStorage.setItem("biome-balancer-compendium",JSON.stringify(animalManager.foundAnimals))
+        }
     }
 }
