@@ -54,8 +54,6 @@ function setup(){
     renderManager.addImage("assets/textures/icons/map.png","icons","map")
     renderManager.createState("icons","compendium",false)
     renderManager.addImage("assets/textures/icons/compendium.png","icons","compendium")
-    renderManager.createState("icons","keyesc",false)
-    renderManager.addImage("assets/textures/icons/keys/esc.png","icons","keyesc")
     renderManager.createState("icons","keyc",false)
     renderManager.addImage("assets/textures/icons/keys/c.png","icons","keyc")
     renderManager.createState("icons","keye",false)

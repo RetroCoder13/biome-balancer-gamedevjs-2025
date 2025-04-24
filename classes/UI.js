@@ -91,9 +91,8 @@ class MapUI extends UI{
             }
         }
         ctx.fillStyle = "#000000"
-        ctx.fillRect(this.x+90,this.y+10,105,45)
-        renderManager.renderText("map",this.x+100,this.y+20,25)
-        renderManager.render("icons","keyesc",this.x+10,this.y+10,50,50)
+        ctx.fillRect(this.x+10,this.y+10,105,45)
+        renderManager.renderText("map",this.x+20,this.y+20,25)
     }
 }
 
@@ -123,9 +122,8 @@ class CompendiumUI extends UI{
         let size = 75
         let offset = [100,80]
         ctx.fillStyle = "#000000"
-        ctx.fillRect(this.x+90,this.y+10,315,45)
-        renderManager.renderText("compendium",this.x+100,this.y+20,25)
-        renderManager.render("icons","keyesc",this.x+10,this.y+10,50,50)
+        ctx.fillRect(this.x+10,this.y+10,315,45)
+        renderManager.renderText("compendium",this.x+20,this.y+20,25)
         let mouse = inputManager.getMouse()
         let animal = ""
         for(let i=0;i<animalManager.animalTypes.length;i++){
