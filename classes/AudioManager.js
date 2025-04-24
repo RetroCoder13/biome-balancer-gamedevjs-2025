@@ -1,6 +1,9 @@
 class AudioManager{
     constructor(){
         this.sounds = {}
+        this.totalSounds = 0
+        this.loadedSounds = 0
+        this.loaded = false
     }
 
     createGroup(group){
@@ -19,6 +22,9 @@ class AudioManager{
         sound.src = path
         sound.loop = loop
         this.sounds[group][state].sounds.push(sound)
+        let that = this
+        this.sounds[group][state].sounds[this.sounds[group][state].sounds.length-1].oncanplaythrough = function(){that.loadedSounds++;that.loaded = that.loadedSounds == that.totalSounds}
+        this.totalSounds++
     }
 
     play(group,state){

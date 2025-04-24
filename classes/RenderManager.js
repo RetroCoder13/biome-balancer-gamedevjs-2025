@@ -3,6 +3,9 @@ class RenderManager{
         this.images = {}
         this.totalFrames = 0
         this.frames = 0
+        this.totalImages = 0
+        this.loadedImages = 0
+        this.loaded = false
     }
 
     loadFont(path){
@@ -30,7 +33,7 @@ class RenderManager{
         this.images[object][state] = {
             "animation":animation,
             "frames":frames,
-            "images":[]
+            "images":[],
         }
     }
 
@@ -38,6 +41,9 @@ class RenderManager{
         let image = new Image()
         image.src = path
         this.images[object][state].images.push(image)
+        let that = this
+        this.images[object][state].images[this.images[object][state].images.length-1].onload = function(){that.loadedImages++;that.loaded = that.loadedImages == that.totalImages}
+        this.totalImages++
     }
 
     addImages(path,object,state,frames){
