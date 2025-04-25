@@ -153,7 +153,7 @@ class CompendiumUI extends UI{
             }
         }
         ctx.fillStyle = "#AAAAAA"
-        ctx.fillRect(this.x + offset[0] + 5*(size+10),this.y + offset[1], 450,300)
+        ctx.fillRect(this.x + offset[0] + 5*(size+10),this.y + offset[1], 450,245)
         renderManager.renderText(animal,this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 10,30)
         if(animal == "rabbit" || animal == "fox" || animal == "deer"){
             if(animal == "rabbit"){
