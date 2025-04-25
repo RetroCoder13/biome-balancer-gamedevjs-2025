@@ -23,7 +23,6 @@ function update(){
                 hud.update(renderManager,cameraManager,animalManager,objectManager,biomeManager,player)
                 renderManager.update()
             }
-            cameraManager.update(player)
         }
     } else {
         totalFrames++
@@ -33,6 +32,7 @@ function update(){
         }
         ctx.fillRect(-100,100,(renderManager.loadedImages+audioManager.loadedSounds)/(renderManager.totalImages+audioManager.totalSounds)*200,10)
     }
+    cameraManager.update(player)
 
     requestAnimationFrame(update)
 }
