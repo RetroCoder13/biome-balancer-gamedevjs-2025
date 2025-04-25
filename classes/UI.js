@@ -19,7 +19,7 @@ class UI{
             this.active = !this.active
             this.cooldown = true
             let that = this
-            setTimeout(function(){that.cooldown = false},100)
+            setTimeout(function(){that.cooldown = false},200)
         }
         if(this.active){
             this.updatePosition(cameraManager)
@@ -38,7 +38,7 @@ class MapUI extends UI{
             this.active = !this.active
             this.cooldown = true
             let that = this
-            setTimeout(function(){that.cooldown = false},100)
+            setTimeout(function(){that.cooldown = false},200)
         }
         if(this.active){
             this.updatePosition(cameraManager)
@@ -103,7 +103,7 @@ class CompendiumUI extends UI{
             this.active = !this.active
             this.cooldown = true
             let that = this
-            setTimeout(function(){that.cooldown = false},100)
+            setTimeout(function(){that.cooldown = false},200)
         }
         if(this.active){
             this.updatePosition(cameraManager)
