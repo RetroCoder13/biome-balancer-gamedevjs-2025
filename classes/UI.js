@@ -157,47 +157,94 @@ class CompendiumUI extends UI{
         renderManager.renderText(animal,this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 10,30)
         if(animal == "rabbit" || animal == "fox" || animal == "deer"){
             if(animal == "rabbit"){
-                renderManager.renderText("",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 90,10)
+                renderManager.renderText("the rabbit is cute and",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 100,15)
+                renderManager.renderText("cuddly, predominantly",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 120,15)
+                renderManager.renderText("eating grass and carrots",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 140,15)
             } else if(animal == "fox"){
-                renderManager.renderText("",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 90,10)
+                renderManager.renderText("the fox has beautiful",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 100,15)
+                renderManager.renderText("orange fur, chasing",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 120,15)
+                renderManager.renderText("after its prey to catch",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 140,15)
+                renderManager.renderText("a meal",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 160,15)
             } else if(animal == "deer"){
-                renderManager.renderText("",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 90,10)
+                renderManager.renderText("the deer group together",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 100,15)
+                renderManager.renderText("in herds, eating grass",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 120,15)
+                renderManager.renderText("and shrubs",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 140,15)
             }
             renderManager.renderText("biome: forest",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 50,20)
         } else if(animal == "fennec fox" || animal == "camel" || animal == "desert mouse"){
             if(animal == "fennec fox"){
-                renderManager.renderText("",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 90,10)
+                renderManager.renderText("the fennec fox has sand",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 100,15)
+                renderManager.renderText("coloured fur to blend in",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 120,15)
+                renderManager.renderText("with its surroundings",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 140,15)
+                renderManager.renderText("and stalk its prey",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 160,15)
             } else if(animal == "camel"){
-                renderManager.renderText("",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 90,10)
+                renderManager.renderText("the camel has sturdy",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 100,15)
+                renderManager.renderText("legs to support itself",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 120,15)
+                renderManager.renderText("on sand, and stores fat",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 140,15)
+                renderManager.renderText("in its hump and stalk",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 160,15)
+                renderManager.renderText("its prey",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 180,15)
             } else if(animal == "desert mouse"){
-                renderManager.renderText("",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 90,10)
+                renderManager.renderText("the desert mouse has",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 100,15)
+                renderManager.renderText("large ears to allow",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 120,15)
+                renderManager.renderText("itself to cool down,",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 140,15)
+                renderManager.renderText("eating small plants and",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 160,15)
+                renderManager.renderText("berries",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 180,15)
             }
             renderManager.renderText("biome: desert",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 50,20)
         } else if(animal == "panda" || animal == "monkey" || animal == "snake"){
             if(animal == "panda"){
-                renderManager.renderText("",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 90,10)
+                renderManager.renderText("the panda is lazy and",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 100,15)
+                renderManager.renderText("spends most of its time",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 120,15)
+                renderManager.renderText("sleeping, having a diet",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 140,15)
+                renderManager.renderText("consisting of mainly",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 160,15)
+                renderManager.renderText("bamboo",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 180,15)
             } else if(animal == "monkey"){
-                renderManager.renderText("",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 90,10)
+                renderManager.renderText("the monkey climbs trees",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 100,15)
+                renderManager.renderText("and hangs cheekily,",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 120,15)
+                renderManager.renderText("holding its banana at",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 140,15)
+                renderManager.renderText("all times for a quick",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 160,15)
+                renderManager.renderText("snack",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 180,15)
             } else if(animal == "snake"){
-                renderManager.renderText("",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 90,10)
+                renderManager.renderText("the snake uses its green",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 100,15)
+                renderManager.renderText("shade to hide as a vine,",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 120,15)
+                renderManager.renderText("and then it shoots out.",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 140,15)
+                renderManager.renderText("its favourite meal is a",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 160,15)
+                renderManager.renderText("desert mouse",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 180,15)
             }
             renderManager.renderText("biome: jungle",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 50,20)
         } else if(animal == "fish" || animal == "turtle" || animal == "crab"){
             if(animal == "fish"){
-                renderManager.renderText("",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 90,10)
+                renderManager.renderText("the fish usually swims",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 100,15)
+                renderManager.renderText("in schools, and is sad",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 120,15)
+                renderManager.renderText("to be on its own, eating",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 140,15)
+                renderManager.renderText("little bits of plankton",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 160,15)
             } else if(animal == "turtle"){
-                renderManager.renderText("",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 90,10)
+                renderManager.renderText("the turtle just loves to",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 100,15)
+                renderManager.renderText("swim, eating algae and",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 120,15)
+                renderManager.renderText("insects",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 140,15)
             } else if(animal == "crab"){
-                renderManager.renderText("",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 90,10)
+                renderManager.renderText("the crab spends its day",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 100,15)
+                renderManager.renderText("shuffling left and",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 120,15)
+                renderManager.renderText("right, clamping little",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 140,15)
+                renderManager.renderText("shrimp in its pincers",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 160,15)
             }
             renderManager.renderText("biome: ocean",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 50,20)
         } else if(animal == "arctic fox" || animal == "polar bear" || animal == "reindeer"){
             if(animal == "arctic fox"){
-                renderManager.renderText("",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 90,10)
+                renderManager.renderText("the arctic fox uses its",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 100,15)
+                renderManager.renderText("thick fur to protect",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 120,15)
+                renderManager.renderText("itself in the cold,",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 140,15)
+                renderManager.renderText("eating small animals",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 160,15)
             } else if(animal == "polar bear"){
-                renderManager.renderText("",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 90,10)
+                renderManager.renderText("the polar bear uses its",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 100,15)
+                renderManager.renderText("thick fat to keep itself",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 120,15)
+                renderManager.renderText("warm, catching fish to",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 140,15)
+                renderManager.renderText("eat",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 160,15)
             } else if(animal == "reindeer"){
-                renderManager.renderText("",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 90,10)
+                renderManager.renderText("the reindeer is white in",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 100,15)
+                renderManager.renderText("colour, being very rare",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 120,15)
+                renderManager.renderText("and eating lichen in the",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 140,15)
+                renderManager.renderText("chilly environment",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 160,15)
             }
             renderManager.renderText("biome: tundra",this.x + offset[0] + 5*(size+10) + 10,this.y + offset[1] + 50,20)
         }

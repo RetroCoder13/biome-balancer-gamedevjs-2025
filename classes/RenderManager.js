@@ -23,6 +23,10 @@ class RenderManager{
         this.addImage(`${path}/slash.png`,"font","/")
         this.createState("font",":",false)
         this.addImage(`${path}/colon.png`,"font",":")
+        this.createState("font",".",false)
+        this.addImage(`${path}/fullstop.png`,"font",".")
+        this.createState("font",",",false)
+        this.addImage(`${path}/comma.png`,"font",",")
     }
 
     createObject(object){
