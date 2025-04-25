@@ -17,6 +17,7 @@ class Menu{
         let mouse = inputManager.getMouse()
         if(mouse.pos[0] >= this.offsetX+(this.w-200)/2 && mouse.pos[0] <= this.offsetX+(this.w-200)/2 + 200 && mouse.pos[1] >= this.offsetY+125 && mouse.pos[1] <= this.offsetY+125 + 100 && mouse.click){
             this.active = false
+            inputManager.mouse.pos = [undefined,undefined]
             audioManager.play("music","music")
         }
     }
