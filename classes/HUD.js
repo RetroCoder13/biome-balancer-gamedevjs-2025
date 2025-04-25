@@ -18,7 +18,7 @@ class HUD{
 
     render(renderManager,animalManager,objectManager,biomeManager,player){
         let happyAnimals = animalManager.getHappyAnimals()
-        ctx.fillStyle = "#000000"
+        ctx.fillStyle = "rgba(0,0,0,0.5)"
         ctx.fillRect(this.x+10,this.y+10,370,70)
         if(happyAnimals.count >= 10){
             renderManager.renderText(`saved animals:${happyAnimals.count}/${happyAnimals.total}`,this.x+25,this.y+25,15)
