@@ -239,6 +239,9 @@ function setup(){
     audioManager.createState("music","music")
     audioManager.addSound("assets/sounds/music/music.wav","music","music",true,1)
 
+    audioManager.createState("music","whatstartedaslove")
+    audioManager.addSound("assets/sounds/music/whatstartedaslove.wav","music","whatstartedaslove",false,1)
+
     audioManager.createGroup("effects")
     audioManager.createState("effects","pickup")
     audioManager.addSound("assets/sounds/effects/pickup.wav","effects","pickup",false,0.75)

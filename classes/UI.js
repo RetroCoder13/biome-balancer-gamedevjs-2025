@@ -97,6 +97,10 @@ class MapUI extends UI{
 }
 
 class CompendiumUI extends UI{
+    constructor(cameraManager,w,h,triggerKey){
+        super(cameraManager,w,h,triggerKey)
+        this.easterEggKeys = []
+    }
 
     update(renderManager,inputManager,cameraManager,animalManager){
         if(inputManager.getKey(this.triggerKey) && !this.cooldown){
@@ -203,6 +207,28 @@ class CompendiumUI extends UI{
         if(mouse.pos[0] >= this.x + 10 && mouse.pos[0] <= this.x + 145 && mouse.pos[1] >= this.y + 450 && this.y <= this.y + 490){
             animalManager.foundAnimals = []
             localStorage.setItem("biome-balancer-compendium",JSON.stringify(animalManager.foundAnimals))
+        }
+
+        if(!audioManager.sounds.music.whatstartedaslove.playing){
+            if(inputManager.getKey("e")){
+                this.easterEggKeys[0] = true
+            } else if(inputManager.getKey("l") && this.easterEggKeys[0]){
+                this.easterEggKeys[1] = true
+            }
+            if(inputManager.getKey("l") && this.easterEggKeys[1]){
+                this.easterEggKeys[2] = true
+            } else if(inputManager.getKey("a") && this.easterEggKeys[2]){
+                this.easterEggKeys[3] = true
+            }
+            if(this.easterEggKeys.length == 4){
+                audioManager.stop("music","music")
+                audioManager.play("music","whatstartedaslove")
+                this.easterEggKeys = []
+                setTimeout(function(){
+                    audioManager.stop("music","whatstartedaslove")
+                    audioManager.play("music","music")
+                },127000)
+            }
         }
     }
 }

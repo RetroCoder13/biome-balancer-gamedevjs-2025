@@ -32,6 +32,7 @@ class EndMenu extends Menu{
         if(mouse.pos[0] >= this.offsetX+(this.w-300)/2 && mouse.pos[0] <= this.offsetX+(this.w-300)/2 + 300 && mouse.pos[1] >= this.offsetY+300 && mouse.pos[1] <= this.offsetY+300 + 150 && mouse.click){
             this.active = false
             audioManager.stop("music","music")
+            audioManager.stop("music","whatstartedaslove")
             setup()
         }
     }
