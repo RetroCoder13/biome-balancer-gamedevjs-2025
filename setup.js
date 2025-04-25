@@ -241,10 +241,10 @@ function setup(){
 
     audioManager.createGroup("effects")
     audioManager.createState("effects","pickup")
-    audioManager.addSound("assets/sounds/effects/pickup.wav","effects","pickup",false,0.5)
+    audioManager.addSound("assets/sounds/effects/pickup.wav","effects","pickup",false,0.75)
 
     audioManager.createState("effects","drop")
-    audioManager.addSound("assets/sounds/effects/drop.wav","effects","drop",false,0.5)
+    audioManager.addSound("assets/sounds/effects/drop.wav","effects","drop",false,0.75)
 
     mapUI = new MapUI(cameraManager,1000,500,"m")
     compendiumUI = new CompendiumUI(cameraManager,1000,500,"c")
