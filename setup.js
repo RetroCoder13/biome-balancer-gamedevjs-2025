@@ -251,6 +251,12 @@ function setup(){
 
     renderManager.createState("menu","play",false)
     renderManager.addImage("assets/textures/icons/menu/play.png","menu","play")
+
+    renderManager.createState("menu","menu",false)
+    renderManager.addImage("assets/textures/menu/menu.png","menu","menu")
+
+    renderManager.createState("menu","end",false)
+    renderManager.addImage("assets/textures/menu/end.png","menu","end")
 }
 
 setup()
