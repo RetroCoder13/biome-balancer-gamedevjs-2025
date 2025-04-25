@@ -185,7 +185,7 @@ function setup(){
     objectManager.addObject(new Mainframe(0,0,100,100))
     objectManager.addObject(new Keycard(0,0,45,45))
 
-    for(let i=0;i<200;i++){
+    for(let i=0;i<250;i++){
         let object = objectManager.objectTypes[Math.round(Math.random()*(objectManager.objectTypes.length-1))]
         if(object == "iceberg"){
             objectManager.addObject(new CollisionObject(0,0,90,90,object))
