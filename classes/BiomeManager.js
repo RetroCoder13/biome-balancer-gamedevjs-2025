@@ -55,15 +55,15 @@ class BiomeManager{
                     }
                 }
                 if(biome == "forest"){
-                    renderManager.render("biome","forest",this.x+i*this.size,this.y+j*this.size,this.size,this.size)
+                    renderManager.render("biome","forest",this.x+i*this.size,this.y+j*this.size,this.size+1,this.size+1)
                 } else if(biome == "desert"){
-                    renderManager.render("biome","desert",this.x+i*this.size,this.y+j*this.size,this.size,this.size)
+                    renderManager.render("biome","desert",this.x+i*this.size,this.y+j*this.size,this.size+1,this.size+1)
                 } else if(biome == "ocean"){
-                    renderManager.render("biome","ocean",this.x+i*this.size,this.y+j*this.size,this.size,this.size)
+                    renderManager.render("biome","ocean",this.x+i*this.size,this.y+j*this.size,this.size+1,this.size+1)
                 } else if(biome == "tundra"){
-                    renderManager.render("biome","tundra",this.x+i*this.size,this.y+j*this.size,this.size,this.size)
+                    renderManager.render("biome","tundra",this.x+i*this.size,this.y+j*this.size,this.size+1,this.size+1)
                 } else {
-                    renderManager.render("biome","jungle",this.x+i*this.size,this.y+j*this.size,this.size,this.size)
+                    renderManager.render("biome","jungle",this.x+i*this.size,this.y+j*this.size,this.size+1,this.size+1)
                 }
             }
         }
