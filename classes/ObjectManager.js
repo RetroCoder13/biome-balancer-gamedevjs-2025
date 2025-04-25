@@ -20,11 +20,12 @@ class ObjectManager{
                 this.objects[i].x = point[0]
                 this.objects[i].y = point[1]
                 let biome = biomeManager.checkAnimalBiome(this.objects[i])
-                while((biome != "forest" && this.objects[i].type == "tree")
+                while(((biome != "forest" && this.objects[i].type == "tree")
                     || (biome != "desert" && this.objects[i].type == "palmtree")
                     || (biome != "ocean" && this.objects[i].type == "log")
                     || (biome != "tundra" && this.objects[i].type == "iceberg")
-                    || (biome != "jungle" && this.objects[i].type == "bamboo")){
+                    || (biome != "jungle" && this.objects[i].type == "bamboo"))
+                    && (point[0] != 0 && point[1] != 1)){
                     point = [biomeManager.x+Math.round(Math.random()*(biomeManager.width-biomeManager.size*2)/(biomeManager.size*2))*biomeManager.size*2, biomeManager.y+Math.round(Math.random()*(biomeManager.height-biomeManager.size*2)/(biomeManager.size*2))*biomeManager.size*2]
                     this.objects[i].x = point[0]
                     this.objects[i].y = point[1]
