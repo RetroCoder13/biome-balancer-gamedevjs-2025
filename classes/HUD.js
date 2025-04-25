@@ -20,7 +20,11 @@ class HUD{
         let happyAnimals = animalManager.getHappyAnimals()
         ctx.fillStyle = "#000000"
         ctx.fillRect(this.x+10,this.y+10,370,70)
-        renderManager.renderText(`saved animals: ${happyAnimals.count}/${happyAnimals.total}`,this.x+25,this.y+25,15)
+        if(happyAnimals.count >= 10){
+            renderManager.renderText(`saved animals:${happyAnimals.count}/${happyAnimals.total}`,this.x+25,this.y+25,15)
+        } else {
+            renderManager.renderText(`saved animals: ${happyAnimals.count}/${happyAnimals.total}`,this.x+25,this.y+25,15)
+        }
         renderManager.renderText(`biome: ${biomeManager.checkPlayerBiome(player)}`,this.x+25,this.y+50,15)
         renderManager.render("icons","keym",this.x+880,this.y+440,50,50)
         renderManager.render("icons","map",this.x+940,this.y+440,50,50)
