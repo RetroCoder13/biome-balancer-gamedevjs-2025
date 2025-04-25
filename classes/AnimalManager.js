@@ -72,6 +72,8 @@ class AnimalManager{
                         this.animals[i].targetY = player.y
                         this.animals[i].held = false
                         player.holdingAnimal = false
+                        audioManager.stop("effects","drop")
+                        audioManager.play("effects","drop")
                     } else {
                         this.canDrop = true
                     }
@@ -84,6 +86,8 @@ class AnimalManager{
                     if(inputManager.getKey("e")){
                         this.animals[i].held = true
                         player.holdingAnimal = true
+                        audioManager.stop("effects","pickup")
+                        audioManager.play("effects","pickup")
                         if(!this.foundAnimals.includes(this.animals[i].type)){
                             this.foundAnimals.push(this.animals[i].type)
                             localStorage.setItem("biome-balancer-compendium",JSON.stringify(this.foundAnimals))

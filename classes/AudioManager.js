@@ -23,7 +23,7 @@ class AudioManager{
         sound.loop = loop
         this.sounds[group][state].sounds.push(sound)
         let that = this
-        this.sounds[group][state].sounds[this.sounds[group][state].sounds.length-1].oncanplaythrough = function(){that.loadedSounds++;that.loaded = that.loadedSounds == that.totalSounds}
+        this.sounds[group][state].sounds[this.sounds[group][state].sounds.length-1].oncanplaythrough = function(){that.loadedSounds++;that.loaded = that.loadedSounds >= that.totalSounds}
         this.totalSounds++
     }
 
