@@ -17,10 +17,11 @@ class AudioManager{
         }
     }
 
-    addSound(path,group,state,loop){
+    addSound(path,group,state,loop,volume){
         let sound = new Audio()
         sound.src = path
         sound.loop = loop
+        sound.volume = volume
         this.sounds[group][state].sounds.push(sound)
         let that = this
         this.sounds[group][state].sounds[this.sounds[group][state].sounds.length-1].oncanplaythrough = function(){that.loadedSounds++;that.loaded = that.loadedSounds >= that.totalSounds}
