@@ -83,7 +83,7 @@ class ObjectManager{
             //         }
             //     }
             // }
-            if((player.y + player.h >= this.objects[i].y) && (player.y <= this.objects[i].y + this.objects[i].h) && (player.x + player.w >= this.objects[i].x) && (player.x <= this.objects[i].x + this.objects[i].w) && this.objects[i].type != "iceberg bottom" && this.objects[i].type != "tree trunk" && this.objects[i].type != "palmtree trunk"){
+            if((player.y + player.h >= this.objects[i].y) && (player.y <= this.objects[i].y + this.objects[i].h) && (player.x + player.w >= this.objects[i].x) && (player.x <= this.objects[i].x + this.objects[i].w)){
                 if(this.objects[i] instanceof Keycard){
                     this.objects[i].found = true
                     this.keyCardFound = true
